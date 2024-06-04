@@ -11,20 +11,22 @@ namespace Upgrading_Item_Simulator
         Wood,
         Iron,
         Gold,
-        Diamond
+        Diamond,
+        None
     }
     public enum AttributeType
     {
         Fire,
         Ice,
-        Poison
+        Poison,
+        None
     }
     class Order
     {
-        private IItem item;
+        private Item item;
         private UpgradeType upgradeType;
         private AttributeType attributeType;
-        public Order(IItem item, UpgradeType upgradeType, AttributeType attributeType)
+        public Order(Item item, UpgradeType upgradeType, AttributeType attributeType)
         {
             this.item = item;
             this.upgradeType = upgradeType;

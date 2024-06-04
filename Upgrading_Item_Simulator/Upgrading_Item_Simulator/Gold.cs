@@ -8,5 +8,18 @@ namespace Upgrading_Item_Simulator
 {
     internal class Gold : Resource
     {
+        public override double GetPrice()
+        {
+            throw new NotImplementedException();
+        }
+        public override int GetQuantity()
+        {
+            throw new NotImplementedException();
+        }
+        public override string GetName()
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }

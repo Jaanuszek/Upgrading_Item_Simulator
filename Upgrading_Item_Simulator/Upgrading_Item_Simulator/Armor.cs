@@ -6,7 +6,17 @@ using System.Threading.Tasks;
 
 namespace Upgrading_Item_Simulator
 {
-    internal class Armor :IItem
+    abstract class Armor : Item
     {
+        public double armorValue { get; set; }
+        public double chanceToBlock { get; set; }
+        public double elemetsResistance { get; set; }
+        public Armor()
+        {
+            Durability = 0;
+            armorValue = 0.0;
+            chanceToBlock = 0.0;
+            elemetsResistance = 0.0;
+        }
     }
 }

@@ -10,8 +10,7 @@ namespace Upgrading_Item_Simulator
     {
         public Recipe CreateRecipe(Order order)
         {
-            Recipe recipe = new Recipe();
-            return recipe;
+            return null;
         }
     }
 }

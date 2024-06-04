@@ -24,11 +24,11 @@ namespace Upgrading_Item_Simulator
         {
             Console.WriteLine("Available resources:");
         }
-        public IItem CreateItem()
+        public Item CreateItem()
         {
             return null;
         }
-        public void ProcessCraftedItem(Customer customerOrder, IItem item)
+        public void ProcessCraftedItem(Customer customerOrder, Item item)
         {
 
         }

@@ -8,9 +8,37 @@ namespace Upgrading_Item_Simulator
 {
     internal class IceDecorator : ItemDecorator
     {
-        public IceDecorator(IItem item) : base(item)
+        private double iceDamage { get; set; }
+        private double iceResistance { get; set; }
+        public IceDecorator(Item item) : base(item)
         {
-
+            item.Durability = item.Durability + 50;
+            Durability += 50;
+            if(item is Weapon)
+            {
+                Weapon weapon = (Weapon)item;
+                weapon.Damage = weapon.Damage*1.5;
+                weapon.CriticalChance = weapon.CriticalChance*1.3;
+            }
+            else if(item is Armor)
+            {
+                Armor armor = (Armor)item;
+                armor.armorValue += 10;
+                armor.chanceToBlock += 0.1;
+            }
+        }
+        public override void Upgrade(Resource resource)
+        {
+            decoratedItem.Upgrade(resource);
+            Console.WriteLine("Freezing the item...");
+        }
+        public override string GetDescription()
+        {
+            return decoratedItem.GetDescription() + " Frozen";
+        }
+        public override string GetStats()
+        {
+            return decoratedItem.GetStats();
         }
     }
 }

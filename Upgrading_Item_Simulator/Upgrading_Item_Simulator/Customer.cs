@@ -13,7 +13,7 @@ namespace Upgrading_Item_Simulator
         {
             this.name = name;
         }
-        public Order CreateOrder(IItem item, UpgradeType whatMaterial, AttributeType attribType)
+        public Order CreateOrder(Item item, UpgradeType whatMaterial, AttributeType attribType)
         {
             // Create order
             return new Order(item, whatMaterial, attribType);

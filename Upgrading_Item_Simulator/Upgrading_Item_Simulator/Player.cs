@@ -19,7 +19,7 @@ namespace Upgrading_Item_Simulator
         {
 
         }
-        public IItem CraftItem(string itemType, UpgradeType matType, AttributeType attribType, Recipe recipe)
+        public Item CraftItem(string itemType, UpgradeType matType, AttributeType attribType, Recipe recipe)
         {
             return null;
         }

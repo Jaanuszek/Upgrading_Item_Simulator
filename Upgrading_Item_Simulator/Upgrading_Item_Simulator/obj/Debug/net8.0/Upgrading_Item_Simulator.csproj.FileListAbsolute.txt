@@ -1,0 +1,15 @@
+C:\Users\Kuba\Desktop\Upgrading_Item_Simulator\Upgrading_Item_Simulator\Upgrading_Item_Simulator\obj\Debug\net8.0\Upgrading_Item_Simulator.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Kuba\Desktop\Upgrading_Item_Simulator\Upgrading_Item_Simulator\Upgrading_Item_Simulator\obj\Debug\net8.0\Upgrading_Item_Simulator.AssemblyInfoInputs.cache
+C:\Users\Kuba\Desktop\Upgrading_Item_Simulator\Upgrading_Item_Simulator\Upgrading_Item_Simulator\obj\Debug\net8.0\Upgrading_Item_Simulator.AssemblyInfo.cs
+C:\Users\Kuba\Desktop\Upgrading_Item_Simulator\Upgrading_Item_Simulator\Upgrading_Item_Simulator\obj\Debug\net8.0\Upgrading_Item_Simulator.csproj.CoreCompileInputs.cache
+C:\Users\Kuba\Desktop\Upgrading_Item_Simulator\Upgrading_Item_Simulator\Upgrading_Item_Simulator\obj\Debug\net8.0\Upgrading_Item_Simulator.sourcelink.json
+C:\Users\Kuba\Desktop\Upgrading_Item_Simulator\Upgrading_Item_Simulator\Upgrading_Item_Simulator\bin\Debug\net8.0\Upgrading_Item_Simulator.exe
+C:\Users\Kuba\Desktop\Upgrading_Item_Simulator\Upgrading_Item_Simulator\Upgrading_Item_Simulator\bin\Debug\net8.0\Upgrading_Item_Simulator.deps.json
+C:\Users\Kuba\Desktop\Upgrading_Item_Simulator\Upgrading_Item_Simulator\Upgrading_Item_Simulator\bin\Debug\net8.0\Upgrading_Item_Simulator.runtimeconfig.json
+C:\Users\Kuba\Desktop\Upgrading_Item_Simulator\Upgrading_Item_Simulator\Upgrading_Item_Simulator\bin\Debug\net8.0\Upgrading_Item_Simulator.dll
+C:\Users\Kuba\Desktop\Upgrading_Item_Simulator\Upgrading_Item_Simulator\Upgrading_Item_Simulator\bin\Debug\net8.0\Upgrading_Item_Simulator.pdb
+C:\Users\Kuba\Desktop\Upgrading_Item_Simulator\Upgrading_Item_Simulator\Upgrading_Item_Simulator\obj\Debug\net8.0\Upgrading_Item_Simulator.dll
+C:\Users\Kuba\Desktop\Upgrading_Item_Simulator\Upgrading_Item_Simulator\Upgrading_Item_Simulator\obj\Debug\net8.0\refint\Upgrading_Item_Simulator.dll
+C:\Users\Kuba\Desktop\Upgrading_Item_Simulator\Upgrading_Item_Simulator\Upgrading_Item_Simulator\obj\Debug\net8.0\Upgrading_Item_Simulator.pdb
+C:\Users\Kuba\Desktop\Upgrading_Item_Simulator\Upgrading_Item_Simulator\Upgrading_Item_Simulator\obj\Debug\net8.0\Upgrading_Item_Simulator.genruntimeconfig.cache
+C:\Users\Kuba\Desktop\Upgrading_Item_Simulator\Upgrading_Item_Simulator\Upgrading_Item_Simulator\obj\Debug\net8.0\ref\Upgrading_Item_Simulator.dll

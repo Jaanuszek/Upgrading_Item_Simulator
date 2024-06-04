@@ -11,12 +11,12 @@ namespace Upgrading_Item_Simulator
         private double price;
         private int quantity;
         private string name;
-        public Resource(double price, int quantity, string name)
-        {
-            this.price = price;
-            this.quantity = quantity;
-            this.name = name;
-        }
+        //public Resource(double price, int quantity, string name)
+        //{
+        //    this.price = price;
+        //    this.quantity = quantity;
+        //    this.name = name;
+        //}
         abstract public double GetPrice();
         abstract public int GetQuantity();
         abstract public string GetName();

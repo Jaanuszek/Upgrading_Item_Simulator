@@ -8,14 +8,14 @@ namespace Upgrading_Item_Simulator
 {
     class Shop
     {
-        private List<Resource> AvailableResources;
+        private Dictionary<Resource,int> AvailableResources;
         public Shop()
         {
-            AvailableResources = new List<Resource>();
+            AvailableResources = new Dictionary<Resource, int>();
         }
         public Resource GetResource(string resourceName)
         {
-            return AvailableResources.FirstOrDefault(resource => resource.GetName() == resourceName);
+            return null;
         }
         public void RestockResource()
         {

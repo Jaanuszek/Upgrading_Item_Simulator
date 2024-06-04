@@ -8,5 +8,17 @@ namespace Upgrading_Item_Simulator
 {
     internal class Wood : Resource
     {
+        public override double GetPrice()
+        {
+            throw new NotImplementedException();
+        }
+        public override int GetQuantity()
+        {
+            return 1;
+        }
+        public override string GetName()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
