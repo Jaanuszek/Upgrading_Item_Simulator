@@ -79,4 +79,7 @@ foreach(ItemDecorator item in decoratedItems)
     }
 }
 
-
+Customer cus = new Customer("zbigniew");
+//cus.CreateOrder();
+Order order = cus.CreateOrder();
+order.GetValues();

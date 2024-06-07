@@ -21,16 +21,33 @@ namespace Upgrading_Item_Simulator
         Poison,
         None
     }
+    public enum ItemType
+    {
+        Dagger,
+        Sword,
+        Axe,
+        Bow,
+        Chestplate,
+        Helmet,
+        Boots,
+        None
+    }
     class Order
     {
-        private Item item;
+        //private Item item;
+        private ItemType item;
         private UpgradeType upgradeType;
         private AttributeType attributeType;
-        public Order(Item item, UpgradeType upgradeType, AttributeType attributeType)
+        //dodanie enuma i zmiana argumentu konstruktora na ItemType
+        public Order(ItemType item, UpgradeType upgradeType, AttributeType attributeType)
         {
             this.item = item;
             this.upgradeType = upgradeType;
             this.attributeType = attributeType;
+        }
+        public void GetValues()
+        {
+            Console.WriteLine(item.ToString()+ " " + upgradeType.ToString()+ " " + attributeType.ToString());
         }
     }
 }

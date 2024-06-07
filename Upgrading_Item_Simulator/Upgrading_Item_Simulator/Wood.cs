@@ -14,7 +14,7 @@ namespace Upgrading_Item_Simulator
         //}
         public override double GetPrice()
         {
-            throw new NotImplementedException();
+            return 2.5 * quantity;
         }
         public override int GetQuantity()
         {
@@ -22,7 +22,7 @@ namespace Upgrading_Item_Simulator
         }
         public override string GetName()
         {
-            throw new NotImplementedException();
+            return "Wood";
         }
     }
 }

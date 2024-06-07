@@ -8,17 +8,17 @@ namespace Upgrading_Item_Simulator
 {
     internal class Iron : Resource
     {
-        public override string GetName()
-        {
-            throw new NotImplementedException();
-        }
         public override double GetPrice()
         {
-            throw new NotImplementedException();
+            return 5 * quantity;
         }
         public override int GetQuantity()
         {
-            return 1;
+            return quantity;
+        }
+        public override string GetName()
+        {
+            return "Iron";
         }
     }
 }

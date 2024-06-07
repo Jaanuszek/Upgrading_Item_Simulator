@@ -13,10 +13,24 @@ namespace Upgrading_Item_Simulator
         {
             this.name = name;
         }
-        public Order CreateOrder(Item item, UpgradeType whatMaterial, AttributeType attribType)
+        public Order CreateOrder() //zmiana argumentow
         {
             // Create order
-            return new Order(item, whatMaterial, attribType);
+            Random rand = new Random();
+
+            Array itemType = Enum.GetValues(typeof(ItemType));
+            int randomIndex = rand.Next(itemType.Length-1);
+            ItemType it = (ItemType)itemType.GetValue(randomIndex);
+
+            Array valuesUpType = Enum.GetValues(typeof(UpgradeType));
+            randomIndex = rand.Next(valuesUpType.Length-1);
+            UpgradeType up = (UpgradeType)valuesUpType.GetValue(randomIndex);
+
+            Array valuesAttribType = Enum.GetValues(typeof(AttributeType));
+            randomIndex = rand.Next(valuesAttribType.Length);
+            AttributeType attrib = (AttributeType)valuesAttribType.GetValue(randomIndex);
+
+            return new Order(it, up, attrib);
         }
     }
 }

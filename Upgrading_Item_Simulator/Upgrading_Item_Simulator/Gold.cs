@@ -10,15 +10,15 @@ namespace Upgrading_Item_Simulator
     {
         public override double GetPrice()
         {
-            throw new NotImplementedException();
+            return 10 * quantity;
         }
         public override int GetQuantity()
         {
-            throw new NotImplementedException();
+            return quantity;
         }
         public override string GetName()
         {
-            throw new NotImplementedException();
+            return "Gold";
         }
 
     }
