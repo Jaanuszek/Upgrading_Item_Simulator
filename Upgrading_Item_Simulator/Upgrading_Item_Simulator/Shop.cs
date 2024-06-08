@@ -9,7 +9,6 @@ namespace Upgrading_Item_Simulator
     class Shop
     {
         public Dictionary<Resource,int> AvailableResources { get; set; }
-        public Dictionary<Resource, int> SelledItems { get; set; }
         Random random = new Random(); //dodanie tego
         public Shop()
         {
@@ -20,50 +19,46 @@ namespace Upgrading_Item_Simulator
                 { new Gold(),0 },
                 { new Diamond(),0 }
             };
-            SelledItems = new Dictionary<Resource, int>
+        }
+        public Dictionary<Resource, int> GetResource(string resourceName, int quantity) //dodanie quantity i zmiana zwracanego typu
+        {
+            Dictionary <Resource, int> SelledItems = new Dictionary<Resource, int>
             {
                 { new Wood(),0 },
                 { new Iron(),0 },
                 { new Gold(),0 },
                 { new Diamond(),0 }
             };
-        }
-        public Dictionary<Resource,int> GetResource(string resourceName, int quantity) //dodanie quantity i zmiana zwracanego typu
-        {
-            //ogarnąć tę metodę
-            foreach (Resource resource in AvailableResources.Keys)
+            foreach (Resource res in AvailableResources.Keys)
             {
-                if (resource.GetName() == resourceName)
+                if(res.GetName() == resourceName)
                 {
-                    if (AvailableResources[resource] >= quantity)
+                    if (AvailableResources[res] >= quantity)
                     {
-                        if(SelledItems.ContainsKey(resource))
-                        {
-                            SelledItems[resource] += quantity;
-                        }
-                        else
-                        {
-                            SelledItems[resource] = quantity;
-                        }
-                        AvailableResources[resource] -= quantity;
-                        return SelledItems;
-                    }
-                    else if (AvailableResources[resource] < quantity) // w tym przypadku kupuje tyle ile jest dostepne
-                    {
-                        int temp = AvailableResources[resource];
-                        SelledItems[resource] += temp;
-                        AvailableResources[resource] = 0;
-                        return SelledItems;
+                        AvailableResources[res] -= quantity;
+                        SelledItems[res] += quantity;
+                        return new Dictionary<Resource, int> { { res, quantity } };
                     }
                     else
                     {
-                        Console.WriteLine("There is not enough resources in the shop!");
-                        return SelledItems;
+                        Console.WriteLine("Not enough resources");
+                        return null;
                     }
                 }
             }
-            return SelledItems;
+            return new Dictionary<Resource, int>();
         }
+        //private Resource GetResourceByName(string resourceName)
+        //{
+        //    foreach (var resource in AvailableResources.Keys)
+        //    {
+        //        if (resource.GetName() == resourceName)
+        //        {
+        //            return resource;
+        //        }
+        //    }
+        //    return null;
+        //}
         public void RestockResource()
         {
             List<Resource> resources = new List<Resource>(AvailableResources.Keys);

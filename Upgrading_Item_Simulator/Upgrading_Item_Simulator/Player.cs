@@ -24,7 +24,7 @@ namespace Upgrading_Item_Simulator
         public void BuyResource(Shop shop)
         {
             bool isBuying = true;
-            Dictionary<Resource,int> BoughtResources = new Dictionary<Resource, int>();
+            //Dictionary<Resource,int> BoughtResources = new Dictionary<Resource, int>();
             while (isBuying)
             {
                 Console.WriteLine("What resource do you want to buy?");
@@ -46,7 +46,7 @@ namespace Upgrading_Item_Simulator
                     case ("1"):
                         Console.WriteLine("How much wood do you want to buy?");
                         int qunatity = Convert.ToInt32(Console.ReadLine());
-                        BoughtResources = shop.GetResource("Wood", qunatity);
+                        var BoughtResources = shop.GetResource("Wood", qunatity);
                         //foreach (Resource resource in BoughtResources.Keys)
                         //{
                         //    if (resource.GetName() == "Wood")

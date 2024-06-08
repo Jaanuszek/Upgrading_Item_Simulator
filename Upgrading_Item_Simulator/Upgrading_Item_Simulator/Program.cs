@@ -2,8 +2,8 @@
 using Upgrading_Item_Simulator;
 
 Item cos = new Dagger();
-Resource res = new Diamond();
-cos.Upgrade(res);
+Resource dsa = new Diamond();
+cos.Upgrade(dsa);
 Console.WriteLine(cos.GetDescription());
 if(cos is Dagger dag)
 {
@@ -112,6 +112,7 @@ Console.WriteLine();
 
 Console.WriteLine("Available resources in shop:");
 Shop shop = new Shop();
+shop.RestockResource();
 Dictionary<Resource, int> ShopResource = shop.AvailableResources;
 foreach (var smth in ShopResource)
 {
@@ -119,24 +120,85 @@ foreach (var smth in ShopResource)
 }
 Console.WriteLine();
 
-for(int i =0;i<5; i++   )
+//for(int i =0;i<5; i++   )
+//{
+//    shop.RestockResource();
+//    Console.WriteLine("Restocked resources:");
+//    foreach (var smth in ShopResource)
+//    {
+//        Console.WriteLine(smth.Key.GetName() + " " + smth.Value);
+//    }
+//    Console.WriteLine();
+//}
+
+//Player player = new Player(100);
+//foreach(var yeah in player.Resources)
+//{
+//    Console.WriteLine(yeah.Key.GetName() + " " + yeah.Value);
+//}
+//player.BuyResource(shop);
+//foreach (var yeah in player.Resources)
+//{
+//    Console.WriteLine(yeah.Key.GetName() + " " + yeah.Value);
+//}
+
+
+Dictionary<Resource, int> SelledItems = new Dictionary<Resource, int>
+            {
+                { new Wood(),0 },
+                { new Iron(),0 },
+                { new Gold(),0 },
+                { new Diamond(),0 }
+            };
+
+string resourceName = "Wood";
+int quantity = 5;
+foreach (Resource siab in SelledItems.Keys.ToList())
 {
-    shop.RestockResource();
-    Console.WriteLine("Restocked resources:");
-    foreach (var smth in ShopResource)
+    Console.WriteLine(siab.GetName());
+    if(siab.GetName() == resourceName)
     {
-        Console.WriteLine(smth.Key.GetName() + " " + smth.Value);
+        Console.WriteLine("jestem w ifie");
+        foreach (Resource sada in ShopResource.Keys)
+        {
+            if(sada.GetName() == resourceName)
+            {
+                ShopResource[sada] -= quantity;
+            }
+        }
+        //ShopResource[siab] -= quantity;
+        SelledItems[siab] += quantity;
     }
-    Console.WriteLine();
+    else
+    {
+        Console.WriteLine("nie jestem w ifie");
+    }
+}
+foreach(var dsakld in ShopResource)
+{
+    Console.WriteLine(dsakld.Key.GetName() + " " + dsakld.Value);
+}
+foreach (var smth in SelledItems)
+{
+    Console.WriteLine(smth.Key.GetName() + " " + smth.Value);
 }
 
-Player player = new Player(100);
-foreach(var yeah in player.Resources)
-{
-    Console.WriteLine(yeah.Key.GetName() + " " + yeah.Value);
-}
-player.BuyResource(shop);
-foreach (var yeah in player.Resources)
-{
-    Console.WriteLine(yeah.Key.GetName() + " " + yeah.Value);
-}
+
+
+//foreach (Resource dsa in SelledItems.Keys)
+//{
+//    if (dsa.GetName() == resourceName)
+//    {
+//        if (AvailableResources[dsa] >= quantity)
+//        {
+//            AvailableResources[dsa] -= quantity;
+//            SelledItems[dsa] += quantity;
+//            return new Dictionary<Resource, int> { { dsa, quantity } };
+//        }
+//        else
+//        {
+//            Console.WriteLine("Not enough resources");
+//            return null;
+//        }
+//    }
+//}

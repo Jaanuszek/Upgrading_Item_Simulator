@@ -16,7 +16,7 @@ namespace Upgrading_Item_Simulator
         //    this.price = price;
         //    this.quantity = quantity;
         //    this.name = name;
-        //}
+        //}z
         abstract public double GetPrice();
         abstract public int GetQuantity();
         abstract public string GetName();
