@@ -9,7 +9,7 @@ namespace Upgrading_Item_Simulator
     abstract class Resource
     {
         protected double price { get; set; }
-        protected int quantity { get; set; }
+        protected int quantity { get; set; } //mozliwe ze to sie w ogole nie przyda
         protected string name { get; set; }
         //public Resource(double price, int quantity, string name)
         //{

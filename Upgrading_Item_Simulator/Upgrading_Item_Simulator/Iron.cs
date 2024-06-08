@@ -10,7 +10,7 @@ namespace Upgrading_Item_Simulator
     {
         public override double GetPrice()
         {
-            return 5 * quantity;
+            return 5;
         }
         public override int GetQuantity()
         {

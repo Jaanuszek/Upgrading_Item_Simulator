@@ -34,7 +34,7 @@ namespace Upgrading_Item_Simulator
         }
         public void CheckBankruptcy(Player player)
         {
-            if(player.money < 0)
+            if(player.Money < 0)
             {
                 Console.WriteLine("You are bankrupt!");
                 return;

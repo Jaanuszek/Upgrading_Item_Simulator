@@ -8,16 +8,25 @@ namespace Upgrading_Item_Simulator
 {
     internal class Recipe
     {
-        private string itemType;
-        private string materialType;
-        private string attributeType;
-        private Dictionary<Resource, int> requiredMaterials;
-        public Recipe(string item, string material, string attrib, Dictionary<Resource,int> reqMat)
+        //private ItemType itemType;
+        //private UpgradeType materialType;
+        //private AttributeType attributeType;
+        public Dictionary<Resource, int> requiredMaterialsItem { get; set; }
+        public Dictionary<Resource, int> requiredMaterialsUpgrade { get; set; }
+        public Dictionary<Resource, int> requiredMaterialsAttrib{ get; set; }
+        // zmiana typow zmiennych
+        //public Recipe(ItemType item, UpgradeType material, AttributeType attrib, Dictionary<Resource,int> reqMat)
+        //{
+        //    itemType = item;
+        //    materialType = material;
+        //    attributeType = attrib;
+        //    requiredMaterials = reqMat;
+        //}
+        public Recipe(Dictionary<Resource,int> reqMatItem, Dictionary<Resource, int> reqMatUp, Dictionary<Resource, int> reqMatAt)
         {
-            itemType = item;
-            materialType = material;
-            attributeType = attrib;
-            requiredMaterials = reqMat;
+            requiredMaterialsItem = reqMatItem;
+            requiredMaterialsUpgrade = reqMatUp;
+            requiredMaterialsAttrib = reqMatAt;
         }
     }
 }

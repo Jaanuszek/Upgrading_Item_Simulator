@@ -83,3 +83,60 @@ Customer cus = new Customer("zbigniew");
 //cus.CreateOrder();
 Order order = cus.CreateOrder();
 order.GetValues();
+
+
+RecipeFactory recipeFactory = new RecipeFactory();
+Recipe recip = recipeFactory.CreateRecipe(order);
+
+
+Console.WriteLine("Required materials for item:");
+foreach (var smth in recip.requiredMaterialsItem)
+{
+    Console.WriteLine(smth.Key.GetName() + " " + smth.Value);
+}
+Console.WriteLine();
+
+Console.WriteLine("Required materials for upgrade:");
+foreach (var smth in recip.requiredMaterialsUpgrade)
+{
+    Console.WriteLine(smth.Key.GetName() + " " + smth.Value);
+}
+Console.WriteLine();
+
+Console.WriteLine("Required materials for attribute:");
+foreach (var smth in recip.requiredMaterialsAttrib)
+{
+    Console.WriteLine(smth.Key.GetName() + " " + smth.Value);
+}
+Console.WriteLine();
+
+Console.WriteLine("Available resources in shop:");
+Shop shop = new Shop();
+Dictionary<Resource, int> ShopResource = shop.AvailableResources;
+foreach (var smth in ShopResource)
+{
+    Console.WriteLine(smth.Key.GetName() + " " + smth.Value);
+}
+Console.WriteLine();
+
+for(int i =0;i<5; i++   )
+{
+    shop.RestockResource();
+    Console.WriteLine("Restocked resources:");
+    foreach (var smth in ShopResource)
+    {
+        Console.WriteLine(smth.Key.GetName() + " " + smth.Value);
+    }
+    Console.WriteLine();
+}
+
+Player player = new Player(100);
+foreach(var yeah in player.Resources)
+{
+    Console.WriteLine(yeah.Key.GetName() + " " + yeah.Value);
+}
+player.BuyResource(shop);
+foreach (var yeah in player.Resources)
+{
+    Console.WriteLine(yeah.Key.GetName() + " " + yeah.Value);
+}
