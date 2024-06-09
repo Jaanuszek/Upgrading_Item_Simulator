@@ -24,7 +24,6 @@ namespace Upgrading_Item_Simulator
         public void BuyResource(Shop shop)
         {
             bool isBuying = true;
-            //Dictionary<Resource,int> BoughtResources = new Dictionary<Resource, int>();
             while (isBuying)
             {
                 Console.WriteLine("What resource do you want to buy?");
@@ -47,33 +46,48 @@ namespace Upgrading_Item_Simulator
                         Console.WriteLine("How much wood do you want to buy?");
                         int qunatity = Convert.ToInt32(Console.ReadLine());
                         var BoughtResources = shop.GetResource("Wood", qunatity);
-                        //foreach (Resource resource in BoughtResources.Keys)
-                        //{
-                        //    if (resource.GetName() == "Wood")
-                        //    {
-                        //        //money -= resource.GetPrice() * qunatity;
-                        //        Resources[resource] += qunatity;
-                        //    }
-                        //}
+                        AddResource(BoughtResources, qunatity);
+                        ShowInventory();
                         break;
                     case ("2"):
                         Console.WriteLine("How much iron do you want to buy?");
                         qunatity = Convert.ToInt32(Console.ReadLine());
                         BoughtResources = shop.GetResource("Iron", qunatity);
+                        AddResource(BoughtResources, qunatity);
+                        ShowInventory();
                         break;
                     case ("3"):
                         Console.WriteLine("How much gold do you want to buy?");
                         qunatity = Convert.ToInt32(Console.ReadLine());
                         BoughtResources = shop.GetResource("Gold", qunatity);
+                        AddResource(BoughtResources, qunatity);
+                        ShowInventory();
                         break;
                     case ("4"):
                         Console.WriteLine("How much diamond do you want to buy?");
                         qunatity = Convert.ToInt32(Console.ReadLine());
                         BoughtResources = shop.GetResource("Diamond", qunatity);
+                        AddResource(BoughtResources, qunatity);
+                        ShowInventory();
                         break;
                     default:
                         break;
                 }
+            }
+        }
+        private void AddResource(Dictionary<Resource,int> resourcesToAdd, int quantity)
+        {
+            foreach(var resource in resourcesToAdd)
+            {
+                Resources[resource.Key] += resource.Value;
+            }
+        }
+        private void ShowInventory()
+        {
+            Console.WriteLine("Your inventory:");
+            foreach (var res in Resources)
+            {
+                Console.WriteLine(res.Key.GetName() + " " + res.Value);
             }
         }
         public Item CraftItem(string itemType, UpgradeType matType, AttributeType attribType, Recipe recipe)

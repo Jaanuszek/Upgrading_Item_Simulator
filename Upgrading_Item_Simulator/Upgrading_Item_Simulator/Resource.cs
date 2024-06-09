@@ -11,12 +11,21 @@ namespace Upgrading_Item_Simulator
         protected double price { get; set; }
         protected int quantity { get; set; } //mozliwe ze to sie w ogole nie przyda
         protected string name { get; set; }
-        //public Resource(double price, int quantity, string name)
-        //{
-        //    this.price = price;
-        //    this.quantity = quantity;
-        //    this.name = name;
-        //}z
+
+        public override bool Equals(object? obj) //Metoda sprawdzająca czy porównywalny obiekt ma takie same właściwości
+        {
+            if (obj == null || this.GetType() != obj.GetType())
+            {
+                return false;
+            }
+            Resource other = (Resource)obj;
+            return this.name == other.name;
+        }
+        // Metoda która wypisuje ten sam HashCode dla obiektów o takich samych właściwościach
+        public override int GetHashCode() 
+        {
+            return name == null ? 0 : name.GetHashCode();
+        }
         abstract public double GetPrice();
         abstract public int GetQuantity();
         abstract public string GetName();

@@ -29,36 +29,46 @@ namespace Upgrading_Item_Simulator
                 { new Gold(),0 },
                 { new Diamond(),0 }
             };
-            foreach (Resource res in AvailableResources.Keys)
+            Resource resourceToBuy = null;
+            switch (resourceName.ToLower())
             {
-                if(res.GetName() == resourceName)
+                case "wood":
+                    resourceToBuy = new Wood();
+                    break;
+                case "iron":
+                    resourceToBuy = new Iron();
+                    break;
+                case "gold":
+                    resourceToBuy = new Gold();
+                    break;
+                case "diamond":
+                    resourceToBuy = new Diamond();
+                    break;
+                default:
+                    Console.WriteLine("Unknown resource.");
+                    return null;
+            }
+            if (resourceToBuy != null) 
+            { 
+                if (AvailableResources.TryGetValue(resourceToBuy, out int shopQuantity) && shopQuantity >= quantity)
                 {
-                    if (AvailableResources[res] >= quantity)
+                    AvailableResources[resourceToBuy] -= quantity;
+                    if (SelledItems.ContainsKey(resourceToBuy))
                     {
-                        AvailableResources[res] -= quantity;
-                        SelledItems[res] += quantity;
-                        return new Dictionary<Resource, int> { { res, quantity } };
+                        SelledItems[resourceToBuy] += quantity;
                     }
                     else
                     {
-                        Console.WriteLine("Not enough resources");
-                        return null;
+                        SelledItems[resourceToBuy] = quantity;
                     }
                 }
+                else
+                {
+                    Console.WriteLine("Not enough resources");
+                }
             }
-            return new Dictionary<Resource, int>();
+            return SelledItems;
         }
-        //private Resource GetResourceByName(string resourceName)
-        //{
-        //    foreach (var resource in AvailableResources.Keys)
-        //    {
-        //        if (resource.GetName() == resourceName)
-        //        {
-        //            return resource;
-        //        }
-        //    }
-        //    return null;
-        //}
         public void RestockResource()
         {
             List<Resource> resources = new List<Resource>(AvailableResources.Keys);
@@ -80,6 +90,13 @@ namespace Upgrading_Item_Simulator
                 {
                     AvailableResources[resource] = random.Next(0, 3);
                 }
+            }
+        }
+        public void ShowResources() //nie wiem czy sie przyda, ale narazie niech sobie bedzie
+        {
+            foreach (var resource in AvailableResources)
+            {
+                Console.WriteLine(resource.Key.GetName() + " " + resource.Value);
             }
         }
     }
