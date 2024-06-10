@@ -13,6 +13,9 @@ namespace Upgrading_Item_Simulator
         public double elemetsResistance { get; set; }
         public Armor()
         {
+            ItType = ItemType.None;
+            MaterialType = UpgradeType.None;
+            AttribType = AttributeType.None;
             Durability = 0;
             armorValue = 0.0;
             chanceToBlock = 0.0;

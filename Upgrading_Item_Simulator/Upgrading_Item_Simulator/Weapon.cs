@@ -11,6 +11,9 @@ namespace Upgrading_Item_Simulator
         public double CriticalChance { get; set; }
         public Weapon()
         {
+            ItType = ItemType.None;
+            MaterialType = UpgradeType.None;
+            AttribType = AttributeType.None;
             Durability = 0;
             Damage = 0.0;
             CriticalChance = 0.0;

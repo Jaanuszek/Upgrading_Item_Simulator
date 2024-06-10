@@ -11,6 +11,7 @@ namespace Upgrading_Item_Simulator
         public PoisonDecorator(Item item) : base(item)
         {
             item.Durability = item.Durability + 50;
+            item.AttribType = AttributeType.Poison;
             Durability += 50;
             if (item is Weapon)
             {

@@ -8,6 +8,14 @@ namespace Upgrading_Item_Simulator
 {
     internal class Helmet : Armor
     {
+        public Helmet() : base()
+        {
+            Durability = 10;
+            armorValue = 10.0;
+            chanceToBlock = 5.0;
+            elemetsResistance = 5.0;
+            ItType = ItemType.Helmet;
+        }
         public override void Upgrade(Resource resource)
         {
             switch (resource)

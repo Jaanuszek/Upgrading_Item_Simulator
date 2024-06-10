@@ -12,6 +12,7 @@ namespace Upgrading_Item_Simulator
         public Sword() : base()
         {
             swingingDamage = 0;
+            ItType= ItemType.Sword;
         }
         public override void Upgrade(Resource resource)
         {

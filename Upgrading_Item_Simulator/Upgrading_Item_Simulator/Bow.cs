@@ -12,6 +12,7 @@ namespace Upgrading_Item_Simulator
         public Bow(): base()
         {
             range = 0;
+            ItType = ItemType.Bow;
         }
         public override void Upgrade(Resource resource)
         {

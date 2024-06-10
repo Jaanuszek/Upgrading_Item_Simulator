@@ -29,8 +29,14 @@ namespace Upgrading_Item_Simulator
                 Console.WriteLine("What resource do you want to buy?");
                 Console.WriteLine("1. Wood \n2. Iron\n3. Gold\n4. Diamond\n");
                 Console.WriteLine("if you want to stop buying type 'stop'");
-                string resourceName = Console.ReadLine();
-                if (resourceName == "stop")
+                string resourceName = Console.ReadLine() ?? string.Empty;
+                //operator ?? to null-coalescing ustawia domyślną wartość w przypadku gdyby ten ReadLine() zwrocił null
+                if(string.IsNullOrEmpty(resourceName))
+                {
+                    Console.WriteLine("Wrong input");
+                    continue;
+                }
+                if (resourceName.ToLower() == "stop")
                 {
                     isBuying = false;
                     break;
@@ -40,39 +46,56 @@ namespace Upgrading_Item_Simulator
                     Console.WriteLine("Wrong input");
                     continue;
                 }
+                int quantity = 0;
+                Resource resourceToBuy = null;
                 switch (resourceName)
                 {
                     case ("1"):
+                        resourceToBuy = new Wood();
                         Console.WriteLine("How much wood do you want to buy?");
-                        int qunatity = Convert.ToInt32(Console.ReadLine());
-                        var BoughtResources = shop.GetResource("Wood", qunatity);
-                        AddResource(BoughtResources, qunatity);
-                        ShowInventory();
+                        quantity = Convert.ToInt32(Console.ReadLine());
+                        Wood wood = new Wood();
                         break;
                     case ("2"):
+                        resourceToBuy = new Iron();
                         Console.WriteLine("How much iron do you want to buy?");
-                        qunatity = Convert.ToInt32(Console.ReadLine());
-                        BoughtResources = shop.GetResource("Iron", qunatity);
-                        AddResource(BoughtResources, qunatity);
-                        ShowInventory();
+                        quantity = Convert.ToInt32(Console.ReadLine());
                         break;
                     case ("3"):
+                        resourceToBuy = new Gold();
                         Console.WriteLine("How much gold do you want to buy?");
-                        qunatity = Convert.ToInt32(Console.ReadLine());
-                        BoughtResources = shop.GetResource("Gold", qunatity);
-                        AddResource(BoughtResources, qunatity);
-                        ShowInventory();
+                        quantity = Convert.ToInt32(Console.ReadLine());
                         break;
                     case ("4"):
+                        resourceToBuy = new Diamond();
                         Console.WriteLine("How much diamond do you want to buy?");
-                        qunatity = Convert.ToInt32(Console.ReadLine());
-                        BoughtResources = shop.GetResource("Diamond", qunatity);
-                        AddResource(BoughtResources, qunatity);
-                        ShowInventory();
+                        quantity = Convert.ToInt32(Console.ReadLine());
                         break;
                     default:
                         break;
                 }
+                if (resourceToBuy != null)
+                {
+                    double totalCost = resourceToBuy.GetPrice() * quantity;
+                    if (Money >= totalCost)
+                    {
+                        var boughtResources = shop.GetResource(resourceToBuy.GetName(), quantity);
+                        if (boughtResources != null)
+                        {
+                            Money -= totalCost;
+                            AddResource(boughtResources, quantity);
+                            Console.WriteLine($"You bought {quantity} {resourceToBuy.GetName()} for {totalCost}. Remaining money: {Money}");
+                            ShowInventory();
+                        }
+                    }
+                    else
+                    {
+                        Console.WriteLine("You don't have enough money to buy these resources");
+                        Console.WriteLine($"Remaining money {Money}");
+                    }
+                }   
+                Console.WriteLine("Shop Resources:");
+                shop.ShowResources();
             }
         }
         private void AddResource(Dictionary<Resource,int> resourcesToAdd, int quantity)
@@ -90,9 +113,83 @@ namespace Upgrading_Item_Simulator
                 Console.WriteLine(res.Key.GetName() + " " + res.Value);
             }
         }
-        public Item CraftItem(string itemType, UpgradeType matType, AttributeType attribType, Recipe recipe)
+        //zamiana argumentu funkcji Item na ItemType itemType
+        // Trzeba ogarnąć jak ma program wiedziec ile materiałów trzeba graczowi zabrac
+        // trzeba pewnie bedzie przerobic klase Recipe, albo dodać tu coś podobnego
+        public Item CraftItem(ItemType itemType, UpgradeType matType, AttributeType attribType) //usuniecie argumentu Recipe
         {
-            return null;
+            IRecipeFactory recipeFactory = new RecipeFactory();
+            Recipe recipe = recipeFactory.CreateRecipe(itemType,matType,attribType);
+            foreach(var resource in recipe.requiredMaterialsItem)
+            {
+                if (Resources[resource.Key] < resource.Value)
+                {
+                    Console.WriteLine("You don't have enough resources to craft this item");
+                    return null;
+                }
+                Resources[resource.Key] -= resource.Value;
+            }
+            Item item = CreateItem(itemType);
+            Resource material = CreateMaterial(matType);
+            foreach(var resource in recipe.requiredMaterialsUpgrade)
+            {
+                if (Resources[resource.Key] < resource.Value)
+                {
+                    Console.WriteLine("You don't have enough resources to upgrade this item");
+                    return item;
+                }
+                Resources[resource.Key] -= resource.Value;
+            }
+            item.Upgrade(material);
+            foreach(var resource in recipe.requiredMaterialsAttrib)
+            {
+                if (Resources[resource.Key] < resource.Value)
+                {
+                    Console.WriteLine("You don't have enough resources to add attribute to this item");
+                    return item;
+                }
+                Resources[resource.Key] -= resource.Value;
+            }
+            item = AddAttribute(item, attribType);
+            return item;
+        }
+
+        //te metody mozna do oddzielnej klasy w sumie wrzucic, żeby bylo bardziej modularnie
+        private static Item CreateItem(ItemType itemType)
+        {
+            return itemType switch
+            {
+                ItemType.Dagger => new Dagger(),
+                ItemType.Sword => new Sword(),
+                ItemType.Axe => new Axe(),
+                ItemType.Bow => new Bow(),
+                ItemType.Chestplate => new Chestplate(),
+                ItemType.Helmet => new Helmet(),
+                ItemType.Boots => new Boots(),
+                _ => throw new ArgumentException("Invalid item type")
+            }; 
+        }
+        private static Resource CreateMaterial(UpgradeType matType)
+        {
+            return matType switch
+            {
+                UpgradeType.Wood => new Wood(),
+                UpgradeType.Iron => new Iron(),
+                UpgradeType.Gold => new Gold(),
+                UpgradeType.Diamond => new Diamond(),
+                _ => throw new ArgumentException("Invalid material type")
+            };
+        }
+        private static Item AddAttribute(Item item, AttributeType attribType)
+        {
+            return attribType switch
+            {
+                AttributeType.Fire => new FireDecorator(item),
+                AttributeType.Ice => new IceDecorator(item),
+                AttributeType.Poison => new PoisonDecorator(item),
+                AttributeType.None => item,
+                _ => throw new ArgumentException("Invalid attribute type")
+            };
         }
     }
 }

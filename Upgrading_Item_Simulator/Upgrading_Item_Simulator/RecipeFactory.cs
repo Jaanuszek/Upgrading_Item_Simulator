@@ -11,10 +11,14 @@ namespace Upgrading_Item_Simulator
     {
         public Recipe CreateRecipe(Order order)
         {
-            ItemType itemType = order.item;
-            UpgradeType materialType = order.upgradeType;
-            AttributeType attributeType = order.attributeType;
-
+            return CreateRecipe(order.item, order.upgradeType, order.attributeType);
+        }
+        public Recipe CreateRecipe(Item item)
+        {
+            return CreateRecipe(item.ItType, item.MaterialType, item.AttribType);
+        }
+        public Recipe CreateRecipe(ItemType itemType, UpgradeType materialType, AttributeType attributeType)
+        {
             Dictionary<Resource, int> requiredMaterialsItem = new Dictionary<Resource, int>();
             Dictionary<Resource, int> requiredMaterialsUpgrade = new Dictionary<Resource, int>();
             Dictionary<Resource, int> requiredMaterialsAttrib = new Dictionary<Resource, int>();

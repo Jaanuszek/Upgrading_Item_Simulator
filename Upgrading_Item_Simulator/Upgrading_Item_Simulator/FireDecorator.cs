@@ -11,6 +11,7 @@ namespace Upgrading_Item_Simulator
         public FireDecorator(Item item) : base(item)
         {
             item.Durability = item.Durability + 50;
+            item.AttribType = AttributeType.Fire;
             Durability += 50;
             if (item is Weapon)
             {

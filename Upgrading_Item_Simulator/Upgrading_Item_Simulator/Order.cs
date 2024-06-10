@@ -45,9 +45,9 @@ namespace Upgrading_Item_Simulator
             this.upgradeType = upgradeType;
             this.attributeType = attributeType;
         }
-        public void GetValues()
-        {
-            Console.WriteLine(item.ToString()+ " " + upgradeType.ToString()+ " " + attributeType.ToString());
+        public string GetValues() //zamiana na string z void
+        { 
+            return "Item type: " + item.ToString() + ", " + "Material type: " + upgradeType.ToString() + ", " + "Attribute Type:"+ attributeType.ToString();
         }
     }
 }

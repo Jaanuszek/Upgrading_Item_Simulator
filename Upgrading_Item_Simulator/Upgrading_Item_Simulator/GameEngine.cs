@@ -18,12 +18,33 @@ namespace Upgrading_Item_Simulator
         }
         public void RunGame()
         {
+            bool running = CheckBankruptcy(player);
+            Console.WriteLine("Welcome to the Upgrading Items simulator!");
+            Console.WriteLine("You can buy resources in the shop and craft items with them.");
+            Console.WriteLine("Rules are simple: you can't go bankrupt.\nFirstly you go to the shop to buy resources" +
+                ",then you have to remember the recipe of this item and you have to forge it\nvery simple right?");
+            while (running)
+            {
+                Customer customer = new Customer("Zbigniew");
+                Order order = customer.CreateOrder();
+                IRecipeFactory recipeFactory = new RecipeFactory();
+                Recipe recipe = recipeFactory.CreateRecipe(order);
+                Console.WriteLine("Create the following item:");
+                Console.WriteLine(order.GetValues());
+                shop.RestockResource();
+                Console.WriteLine("Your Resources:");
+                foreach (var resource in player.Resources)
+                {
+                    Console.WriteLine(resource.Key.GetName() + " " + resource.Value);
+                }
+                Console.WriteLine("Available resources in shop:");
+                shop.ShowResources();
+                player.BuyResource(shop);
 
+                running = false; //debuggin reasons
+            }
         }
-        public void DisplayAvailableResources(Player player)
-        {
-            Console.WriteLine("Available resources:");
-        }
+        //usunięta metoda ShowResources
         public Item CreateItem()
         {
             return null;
@@ -32,13 +53,14 @@ namespace Upgrading_Item_Simulator
         {
 
         }
-        public void CheckBankruptcy(Player player)
+        public bool CheckBankruptcy(Player player) //zmiana na bool
         {
             if(player.Money < 0)
             {
                 Console.WriteLine("You are bankrupt!");
-                return;
+                return false;
             }
+            return true;
         }
     }
 }

@@ -96,7 +96,7 @@ namespace Upgrading_Item_Simulator
         {
             foreach (var resource in AvailableResources)
             {
-                Console.WriteLine(resource.Key.GetName() + " " + resource.Value);
+                Console.WriteLine(resource.Key.GetName() + " " + resource.Value + " " + "Price: " + resource.Key.GetPrice());
             }
         }
     }

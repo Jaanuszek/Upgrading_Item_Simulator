@@ -13,7 +13,7 @@ namespace Upgrading_Item_Simulator
         public Dagger() : base()
         {
             backStabChance = 0.0;
-            MaterialType = UpgradeType.None;
+            ItType = ItemType.Dagger;
         }
         public override void Upgrade(Resource resource)
         {

@@ -8,6 +8,8 @@ namespace Upgrading_Item_Simulator
 {
     interface IRecipeFactory
     {
-        public Recipe CreateRecipe(Order order);
+        Recipe CreateRecipe(Order order);
+        Recipe CreateRecipe(Item item);
+        Recipe CreateRecipe(ItemType itemType, UpgradeType materialType, AttributeType attributeType);
     }
 }

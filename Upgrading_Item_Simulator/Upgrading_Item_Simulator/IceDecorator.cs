@@ -13,6 +13,7 @@ namespace Upgrading_Item_Simulator
         public IceDecorator(Item item) : base(item)
         {
             item.Durability = item.Durability + 50;
+            item.AttribType = AttributeType.Ice;
             Durability += 50;
             if(item is Weapon)
             {

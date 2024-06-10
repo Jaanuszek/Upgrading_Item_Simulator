@@ -11,6 +11,7 @@ namespace Upgrading_Item_Simulator
         private double cleaveRange { get; set; } //zasieg cięcia
         public Axe():base()
         {
+            ItType = ItemType.Axe;
             cleaveRange = 0;
         }
         public override void Upgrade(Resource resource)

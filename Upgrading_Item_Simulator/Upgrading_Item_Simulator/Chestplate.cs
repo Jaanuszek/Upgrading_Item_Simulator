@@ -9,6 +9,14 @@ namespace Upgrading_Item_Simulator
 {
     internal class Chestplate : Armor
     {
+        public Chestplate() : base()
+        {
+            Durability = 10;
+            armorValue = 10.0;
+            chanceToBlock = 5.0;
+            elemetsResistance = 5.0;
+            ItType = ItemType.Chestplate;
+        }
         public override void Upgrade(Resource resource)
         {
             switch (resource)
