@@ -161,5 +161,5 @@ using Upgrading_Item_Simulator;
 //    Console.WriteLine(yeah.Key.GetName() + " " + yeah.Value);
 //}
 
-GameEngine game = new GameEngine(new Shop(), new Player(100));
+GameEngine game = new GameEngine(new Shop(), new Player(500));
 game.RunGame();

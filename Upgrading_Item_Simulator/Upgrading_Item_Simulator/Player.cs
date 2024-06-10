@@ -8,8 +8,8 @@ namespace Upgrading_Item_Simulator
 {
     class Player
     {
-        public double Money { get; private set; }
-        public Dictionary<Resource, int> Resources { get; private set; }
+        public double Money { get; set; }
+        public Dictionary<Resource, int> Resources { get; set; }
         public Player(double startingMoney)
         {
             Money = startingMoney;

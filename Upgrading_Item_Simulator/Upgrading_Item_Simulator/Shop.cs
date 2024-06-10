@@ -84,7 +84,7 @@ namespace Upgrading_Item_Simulator
                 }
                 if (resource is Gold)
                 {
-                    AvailableResources[resource] = random.Next(0, 7);
+                    AvailableResources[resource] = random.Next(1, 10);
                 }
                 if (resource is Diamond)
                 {

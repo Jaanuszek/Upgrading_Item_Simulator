@@ -18,5 +18,23 @@ namespace Upgrading_Item_Simulator
             requiredMaterialsUpgrade = reqMatUp;
             requiredMaterialsAttrib = reqMatAt;
         }
+        public void ShowRecipe()
+        {
+            Console.WriteLine("To Create Item:");
+            foreach (var resource in requiredMaterialsItem)
+            {
+                Console.WriteLine(resource.Key.GetName() + " " + resource.Value);
+            }
+            Console.WriteLine("To Upgrade Item:");
+            foreach (var resource in requiredMaterialsUpgrade)
+            {
+                Console.WriteLine(resource.Key.GetName() + " " + resource.Value);
+            }
+            Console.WriteLine("To Add Attribute:");
+            foreach (var resource in requiredMaterialsAttrib)
+            {
+                Console.WriteLine(resource.Key.GetName() + " " + resource.Value);
+            }
+        }
     }
 }

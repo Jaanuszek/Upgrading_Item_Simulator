@@ -3,24 +3,40 @@
   "WorkspaceRootPath": "C:\\Users\\Kuba\\Desktop\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{8826AD28-3D7B-454F-B9F0-B43196DB3C5A}|Upgrading_Item_Simulator\\Upgrading_Item_Simulator.csproj|c:\\users\\kuba\\desktop\\upgrading_item_simulator\\upgrading_item_simulator\\upgrading_item_simulator\\irecipefactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8826AD28-3D7B-454F-B9F0-B43196DB3C5A}|Upgrading_Item_Simulator\\Upgrading_Item_Simulator.csproj|solutionrelative:upgrading_item_simulator\\irecipefactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8826AD28-3D7B-454F-B9F0-B43196DB3C5A}|Upgrading_Item_Simulator\\Upgrading_Item_Simulator.csproj|c:\\users\\kuba\\desktop\\upgrading_item_simulator\\upgrading_item_simulator\\upgrading_item_simulator\\iron.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8826AD28-3D7B-454F-B9F0-B43196DB3C5A}|Upgrading_Item_Simulator\\Upgrading_Item_Simulator.csproj|solutionrelative:upgrading_item_simulator\\iron.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8826AD28-3D7B-454F-B9F0-B43196DB3C5A}|Upgrading_Item_Simulator\\Upgrading_Item_Simulator.csproj|c:\\users\\kuba\\desktop\\upgrading_item_simulator\\upgrading_item_simulator\\upgrading_item_simulator\\shop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8826AD28-3D7B-454F-B9F0-B43196DB3C5A}|Upgrading_Item_Simulator\\Upgrading_Item_Simulator.csproj|solutionrelative:upgrading_item_simulator\\shop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8826AD28-3D7B-454F-B9F0-B43196DB3C5A}|Upgrading_Item_Simulator\\Upgrading_Item_Simulator.csproj|c:\\users\\kuba\\desktop\\upgrading_item_simulator\\upgrading_item_simulator\\upgrading_item_simulator\\gameengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8826AD28-3D7B-454F-B9F0-B43196DB3C5A}|Upgrading_Item_Simulator\\Upgrading_Item_Simulator.csproj|solutionrelative:upgrading_item_simulator\\gameengine.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8826AD28-3D7B-454F-B9F0-B43196DB3C5A}|Upgrading_Item_Simulator\\Upgrading_Item_Simulator.csproj|c:\\users\\kuba\\desktop\\upgrading_item_simulator\\upgrading_item_simulator\\upgrading_item_simulator\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8826AD28-3D7B-454F-B9F0-B43196DB3C5A}|Upgrading_Item_Simulator\\Upgrading_Item_Simulator.csproj|solutionrelative:upgrading_item_simulator\\player.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8826AD28-3D7B-454F-B9F0-B43196DB3C5A}|Upgrading_Item_Simulator\\Upgrading_Item_Simulator.csproj|c:\\users\\kuba\\desktop\\upgrading_item_simulator\\upgrading_item_simulator\\upgrading_item_simulator\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8826AD28-3D7B-454F-B9F0-B43196DB3C5A}|Upgrading_Item_Simulator\\Upgrading_Item_Simulator.csproj|solutionrelative:upgrading_item_simulator\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8826AD28-3D7B-454F-B9F0-B43196DB3C5A}|Upgrading_Item_Simulator\\Upgrading_Item_Simulator.csproj|c:\\users\\kuba\\desktop\\upgrading_item_simulator\\upgrading_item_simulator\\upgrading_item_simulator\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8826AD28-3D7B-454F-B9F0-B43196DB3C5A}|Upgrading_Item_Simulator\\Upgrading_Item_Simulator.csproj|solutionrelative:upgrading_item_simulator\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8826AD28-3D7B-454F-B9F0-B43196DB3C5A}|Upgrading_Item_Simulator\\Upgrading_Item_Simulator.csproj|c:\\users\\kuba\\desktop\\upgrading_item_simulator\\upgrading_item_simulator\\upgrading_item_simulator\\shop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8826AD28-3D7B-454F-B9F0-B43196DB3C5A}|Upgrading_Item_Simulator\\Upgrading_Item_Simulator.csproj|solutionrelative:upgrading_item_simulator\\shop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8826AD28-3D7B-454F-B9F0-B43196DB3C5A}|Upgrading_Item_Simulator\\Upgrading_Item_Simulator.csproj|c:\\users\\kuba\\desktop\\upgrading_item_simulator\\upgrading_item_simulator\\upgrading_item_simulator\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8826AD28-3D7B-454F-B9F0-B43196DB3C5A}|Upgrading_Item_Simulator\\Upgrading_Item_Simulator.csproj|solutionrelative:upgrading_item_simulator\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8826AD28-3D7B-454F-B9F0-B43196DB3C5A}|Upgrading_Item_Simulator\\Upgrading_Item_Simulator.csproj|c:\\users\\kuba\\desktop\\upgrading_item_simulator\\upgrading_item_simulator\\upgrading_item_simulator\\recipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8826AD28-3D7B-454F-B9F0-B43196DB3C5A}|Upgrading_Item_Simulator\\Upgrading_Item_Simulator.csproj|solutionrelative:upgrading_item_simulator\\recipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8826AD28-3D7B-454F-B9F0-B43196DB3C5A}|Upgrading_Item_Simulator\\Upgrading_Item_Simulator.csproj|c:\\users\\kuba\\desktop\\upgrading_item_simulator\\upgrading_item_simulator\\upgrading_item_simulator\\irecipefactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8826AD28-3D7B-454F-B9F0-B43196DB3C5A}|Upgrading_Item_Simulator\\Upgrading_Item_Simulator.csproj|solutionrelative:upgrading_item_simulator\\irecipefactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8826AD28-3D7B-454F-B9F0-B43196DB3C5A}|Upgrading_Item_Simulator\\Upgrading_Item_Simulator.csproj|c:\\users\\kuba\\desktop\\upgrading_item_simulator\\upgrading_item_simulator\\upgrading_item_simulator\\iron.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8826AD28-3D7B-454F-B9F0-B43196DB3C5A}|Upgrading_Item_Simulator\\Upgrading_Item_Simulator.csproj|solutionrelative:upgrading_item_simulator\\iron.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8826AD28-3D7B-454F-B9F0-B43196DB3C5A}|Upgrading_Item_Simulator\\Upgrading_Item_Simulator.csproj|c:\\users\\kuba\\desktop\\upgrading_item_simulator\\upgrading_item_simulator\\upgrading_item_simulator\\diamond.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -39,28 +55,12 @@
       "RelativeMoniker": "D:0:0:{8826AD28-3D7B-454F-B9F0-B43196DB3C5A}|Upgrading_Item_Simulator\\Upgrading_Item_Simulator.csproj|solutionrelative:upgrading_item_simulator\\resource.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8826AD28-3D7B-454F-B9F0-B43196DB3C5A}|Upgrading_Item_Simulator\\Upgrading_Item_Simulator.csproj|c:\\users\\kuba\\desktop\\upgrading_item_simulator\\upgrading_item_simulator\\upgrading_item_simulator\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8826AD28-3D7B-454F-B9F0-B43196DB3C5A}|Upgrading_Item_Simulator\\Upgrading_Item_Simulator.csproj|solutionrelative:upgrading_item_simulator\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8826AD28-3D7B-454F-B9F0-B43196DB3C5A}|Upgrading_Item_Simulator\\Upgrading_Item_Simulator.csproj|c:\\users\\kuba\\desktop\\upgrading_item_simulator\\upgrading_item_simulator\\upgrading_item_simulator\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8826AD28-3D7B-454F-B9F0-B43196DB3C5A}|Upgrading_Item_Simulator\\Upgrading_Item_Simulator.csproj|solutionrelative:upgrading_item_simulator\\order.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8826AD28-3D7B-454F-B9F0-B43196DB3C5A}|Upgrading_Item_Simulator\\Upgrading_Item_Simulator.csproj|c:\\users\\kuba\\desktop\\upgrading_item_simulator\\upgrading_item_simulator\\upgrading_item_simulator\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8826AD28-3D7B-454F-B9F0-B43196DB3C5A}|Upgrading_Item_Simulator\\Upgrading_Item_Simulator.csproj|solutionrelative:upgrading_item_simulator\\customer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8826AD28-3D7B-454F-B9F0-B43196DB3C5A}|Upgrading_Item_Simulator\\Upgrading_Item_Simulator.csproj|c:\\users\\kuba\\desktop\\upgrading_item_simulator\\upgrading_item_simulator\\upgrading_item_simulator\\dagger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8826AD28-3D7B-454F-B9F0-B43196DB3C5A}|Upgrading_Item_Simulator\\Upgrading_Item_Simulator.csproj|solutionrelative:upgrading_item_simulator\\dagger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8826AD28-3D7B-454F-B9F0-B43196DB3C5A}|Upgrading_Item_Simulator\\Upgrading_Item_Simulator.csproj|c:\\users\\kuba\\desktop\\upgrading_item_simulator\\upgrading_item_simulator\\upgrading_item_simulator\\poisondecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8826AD28-3D7B-454F-B9F0-B43196DB3C5A}|Upgrading_Item_Simulator\\Upgrading_Item_Simulator.csproj|solutionrelative:upgrading_item_simulator\\poisondecorator.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{8826AD28-3D7B-454F-B9F0-B43196DB3C5A}|Upgrading_Item_Simulator\\Upgrading_Item_Simulator.csproj|c:\\users\\kuba\\desktop\\upgrading_item_simulator\\upgrading_item_simulator\\upgrading_item_simulator\\recipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8826AD28-3D7B-454F-B9F0-B43196DB3C5A}|Upgrading_Item_Simulator\\Upgrading_Item_Simulator.csproj|solutionrelative:upgrading_item_simulator\\recipe.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8826AD28-3D7B-454F-B9F0-B43196DB3C5A}|Upgrading_Item_Simulator\\Upgrading_Item_Simulator.csproj|c:\\users\\kuba\\desktop\\upgrading_item_simulator\\upgrading_item_simulator\\upgrading_item_simulator\\recipefactory.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -134,33 +134,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "Resource.cs",
-              "DocumentMoniker": "C:\\Users\\Kuba\\Desktop\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\Resource.cs",
-              "RelativeDocumentMoniker": "Upgrading_Item_Simulator\\Resource.cs",
-              "ToolTip": "C:\\Users\\Kuba\\Desktop\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\Resource.cs",
-              "RelativeToolTip": "Upgrading_Item_Simulator\\Resource.cs",
-              "ViewState": "AQIAAAkAAAAAAAAAAAAAwBYAAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T15:40:53.651Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 6,
               "Title": "Recipe.cs",
               "DocumentMoniker": "C:\\Users\\Kuba\\Desktop\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\Recipe.cs",
               "RelativeDocumentMoniker": "Upgrading_Item_Simulator\\Recipe.cs",
               "ToolTip": "C:\\Users\\Kuba\\Desktop\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\Recipe.cs",
               "RelativeToolTip": "Upgrading_Item_Simulator\\Recipe.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABMAAAAIAAAA",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAcwCUAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-03T15:44:09.625Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 14,
               "Title": "PoisonDecorator.cs",
               "DocumentMoniker": "C:\\Users\\Kuba\\Desktop\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\PoisonDecorator.cs",
               "RelativeDocumentMoniker": "Upgrading_Item_Simulator\\PoisonDecorator.cs",
@@ -168,12 +155,11 @@
               "RelativeToolTip": "Upgrading_Item_Simulator\\PoisonDecorator.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAyAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T15:34:32.336Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-03T15:34:32.336Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 7,
               "Title": "IRecipeFactory.cs",
               "DocumentMoniker": "C:\\Users\\Kuba\\Desktop\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\IRecipeFactory.cs",
               "RelativeDocumentMoniker": "Upgrading_Item_Simulator\\IRecipeFactory.cs",
@@ -186,13 +172,13 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "GameEngine.cs",
               "DocumentMoniker": "C:\\Users\\Kuba\\Desktop\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\GameEngine.cs",
               "RelativeDocumentMoniker": "Upgrading_Item_Simulator\\GameEngine.cs",
               "ToolTip": "C:\\Users\\Kuba\\Desktop\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\GameEngine.cs",
               "RelativeToolTip": "Upgrading_Item_Simulator\\GameEngine.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAEwCEAAAAQAAAA",
+              "ViewState": "AQIAAEQAAAAAAAAAAAAwwFMAAACgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-03T15:44:15.109Z",
               "EditorCaption": ""
@@ -211,7 +197,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
+              "DocumentIndex": 2,
               "Title": "Order.cs",
               "DocumentMoniker": "C:\\Users\\Kuba\\Desktop\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\Order.cs",
               "RelativeDocumentMoniker": "Upgrading_Item_Simulator\\Order.cs",
@@ -224,7 +210,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 3,
               "Title": "Customer.cs",
               "DocumentMoniker": "C:\\Users\\Kuba\\Desktop\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\Customer.cs",
               "RelativeDocumentMoniker": "Upgrading_Item_Simulator\\Customer.cs",
@@ -237,33 +223,33 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\Kuba\\Desktop\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\Program.cs",
               "RelativeDocumentMoniker": "Upgrading_Item_Simulator\\Program.cs",
               "ToolTip": "C:\\Users\\Kuba\\Desktop\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\Program.cs",
               "RelativeToolTip": "Upgrading_Item_Simulator\\Program.cs",
-              "ViewState": "AQIAAHsAAAAAAAAAAAAAAKQAAAAPAAAA",
+              "ViewState": "AQIAAJkAAAAAAAAAAAAAAKMAAAA5AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-05-30T09:15:13.903Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Shop.cs",
               "DocumentMoniker": "C:\\Users\\Kuba\\Desktop\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\Shop.cs",
               "RelativeDocumentMoniker": "Upgrading_Item_Simulator\\Shop.cs",
               "ToolTip": "C:\\Users\\Kuba\\Desktop\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\Shop.cs",
               "RelativeToolTip": "Upgrading_Item_Simulator\\Shop.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAGIAAAB7AAAA",
+              "ViewState": "AQIAAAoAAAAAAAAAAAA1wFYAAABAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-03T15:44:28.432Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 13,
               "Title": "Dagger.cs",
               "DocumentMoniker": "C:\\Users\\Kuba\\Desktop\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\Dagger.cs",
               "RelativeDocumentMoniker": "Upgrading_Item_Simulator\\Dagger.cs",
@@ -271,8 +257,7 @@
               "RelativeToolTip": "Upgrading_Item_Simulator\\Dagger.cs",
               "ViewState": "AQIAAB8AAAAAAAAAAAAAwEQAAAAUAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T15:33:34.098Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-03T15:33:34.098Z"
             },
             {
               "$type": "Document",
@@ -288,7 +273,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 11,
               "Title": "Wood.cs",
               "DocumentMoniker": "C:\\Users\\Kuba\\Desktop\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\Wood.cs",
               "RelativeDocumentMoniker": "Upgrading_Item_Simulator\\Wood.cs",
@@ -296,12 +281,11 @@
               "RelativeToolTip": "Upgrading_Item_Simulator\\Wood.cs",
               "ViewState": "AQIAAAcAAAAAAAAAAAAAwBkAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T15:41:06.065Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-03T15:41:06.065Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 8,
               "Title": "Iron.cs",
               "DocumentMoniker": "C:\\Users\\Kuba\\Desktop\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\Iron.cs",
               "RelativeDocumentMoniker": "Upgrading_Item_Simulator\\Iron.cs",
@@ -309,25 +293,36 @@
               "RelativeToolTip": "Upgrading_Item_Simulator\\Iron.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAwBUAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T15:41:10.106Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-03T15:41:10.106Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
               "Title": "Player.cs",
               "DocumentMoniker": "C:\\Users\\Kuba\\Desktop\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\Player.cs",
               "RelativeDocumentMoniker": "Upgrading_Item_Simulator\\Player.cs",
               "ToolTip": "C:\\Users\\Kuba\\Desktop\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\Player.cs",
               "RelativeToolTip": "Upgrading_Item_Simulator\\Player.cs",
-              "ViewState": "AQIAABEAAAAAAAAAAAAuwCEAAAAQAAAA",
+              "ViewState": "AQIAAKoAAAAAAAAAAAAuwKEAAAABAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-06-03T15:44:22.433Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 12,
+              "Title": "Resource.cs",
+              "DocumentMoniker": "C:\\Users\\Kuba\\Desktop\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\Resource.cs",
+              "RelativeDocumentMoniker": "Upgrading_Item_Simulator\\Resource.cs",
+              "ToolTip": "C:\\Users\\Kuba\\Desktop\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\Resource.cs",
+              "RelativeToolTip": "Upgrading_Item_Simulator\\Resource.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAwBYAAAAIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-03T15:40:53.651Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "Gold.cs",
               "DocumentMoniker": "C:\\Users\\Kuba\\Desktop\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\Gold.cs",
               "RelativeDocumentMoniker": "Upgrading_Item_Simulator\\Gold.cs",
@@ -335,12 +330,11 @@
               "RelativeToolTip": "Upgrading_Item_Simulator\\Gold.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAwBUAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T15:41:13.433Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-03T15:41:13.433Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 9,
               "Title": "Diamond.cs",
               "DocumentMoniker": "C:\\Users\\Kuba\\Desktop\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\Upgrading_Item_Simulator\\Diamond.cs",
               "RelativeDocumentMoniker": "Upgrading_Item_Simulator\\Diamond.cs",
@@ -348,8 +342,7 @@
               "RelativeToolTip": "Upgrading_Item_Simulator\\Diamond.cs",
               "ViewState": "AQIAAAMAAAAAAAAAAAAAwBUAAAAIAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T15:41:18.225Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-03T15:41:18.225Z"
             },
             {
               "$type": "Document",
@@ -397,8 +390,7 @@
               "RelativeToolTip": "Upgrading_Item_Simulator\\RecipeFactory.cs",
               "ViewState": "AQIAAAIAAAAAAAAAAAAcwBEAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-06-03T15:44:05.58Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-06-03T15:44:05.58Z"
             },
             {
               "$type": "Document",
