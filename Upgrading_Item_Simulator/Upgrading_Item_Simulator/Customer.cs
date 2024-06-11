@@ -19,6 +19,7 @@ namespace Upgrading_Item_Simulator
             Random rand = new Random();
 
             Array itemType = Enum.GetValues(typeof(ItemType));
+
             int randomIndex = rand.Next(itemType.Length-1);
             ItemType it = (ItemType)itemType.GetValue(randomIndex);
 

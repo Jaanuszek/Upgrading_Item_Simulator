@@ -12,10 +12,7 @@ namespace Upgrading_Item_Simulator
         {
             return 30;
         }
-        public override int GetQuantity()
-        {
-            return quantity;
-        }
+
         public override string GetName()
         {
             return "Gold";

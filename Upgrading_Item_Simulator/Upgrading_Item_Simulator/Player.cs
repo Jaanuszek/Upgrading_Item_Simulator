@@ -15,10 +15,10 @@ namespace Upgrading_Item_Simulator
             Money = startingMoney;
             Resources = new Dictionary<Resource, int>
             {
-                {new Wood(), 0},
-                {new Iron(), 0},
-                {new Gold(), 0},
-                {new Diamond(), 0}
+                {new Wood(), 10},
+                {new Iron(), 10},
+                {new Gold(), 10},
+                {new Diamond(), 10}
             };
         }
         public void BuyResource(Shop shop)
@@ -26,6 +26,11 @@ namespace Upgrading_Item_Simulator
             bool isBuying = true;
             while (isBuying)
             {
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                ShowInventory();
+                Console.ForegroundColor = ConsoleColor.Green;
+                Console.WriteLine("Remaining money: " + Money);
+                Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("What resource do you want to buy?");
                 Console.WriteLine("1. Wood \n2. Iron\n3. Gold\n4. Diamond\n");
                 Console.WriteLine("if you want to stop buying type 'stop'");
@@ -47,7 +52,7 @@ namespace Upgrading_Item_Simulator
                     continue;
                 }
                 int quantity = 0;
-                Resource resourceToBuy = null;
+                Resource? resourceToBuy = null; //? oznacza, że zmienna może być nullem
                 switch (resourceName)
                 {
                     case ("1"):
@@ -85,7 +90,9 @@ namespace Upgrading_Item_Simulator
                             Money -= totalCost;
                             AddResource(boughtResources, quantity);
                             Console.WriteLine($"You bought {quantity} {resourceToBuy.GetName()} for {totalCost}. Remaining money: {Money}");
+                            Console.ForegroundColor = ConsoleColor.Magenta;
                             ShowInventory();
+                            Console.ForegroundColor = ConsoleColor.White;
                         }
                     }
                     else
@@ -93,10 +100,12 @@ namespace Upgrading_Item_Simulator
                         Console.WriteLine("You don't have enough money to buy these resources");
                         Console.WriteLine($"Remaining money {Money}");
                     }
-                }   
+                }
+                Console.Clear();
                 Console.WriteLine("Shop Resources:");
                 shop.ShowResources();
             }
+            Console.Clear();
         }
         private void AddResource(Dictionary<Resource,int> resourcesToAdd, int quantity)
         {
@@ -113,10 +122,7 @@ namespace Upgrading_Item_Simulator
                 Console.WriteLine(res.Key.GetName() + " " + res.Value);
             }
         }
-        //zamiana argumentu funkcji Item na ItemType itemType
-        // Trzeba ogarnąć jak ma program wiedziec ile materiałów trzeba graczowi zabrac
-        // trzeba pewnie bedzie przerobic klase Recipe, albo dodać tu coś podobnego
-        public Item CraftItem(ItemType itemType, UpgradeType matType, AttributeType attribType) //usuniecie argumentu Recipe
+        public Item? CraftItem(ItemType itemType, UpgradeType matType, AttributeType attribType) //usuniecie argumentu Recipe
         {
             if(itemType == ItemType.None)
             {
@@ -162,6 +168,7 @@ namespace Upgrading_Item_Simulator
         }
 
         //te metody mozna do oddzielnej klasy w sumie wrzucic, żeby bylo bardziej modularnie
+        // ZASTANOWIC SIE CO Z TYM ZROBIC
         private static Item CreateItem(ItemType itemType)
         {
             return itemType switch
@@ -173,7 +180,6 @@ namespace Upgrading_Item_Simulator
                 ItemType.Chestplate => new Chestplate(),
                 ItemType.Helmet => new Helmet(),
                 ItemType.Boots => new Boots(),
-                //ItemType.None => 
                 _ => throw new ArgumentException("Invalid item type")
             }; 
         }

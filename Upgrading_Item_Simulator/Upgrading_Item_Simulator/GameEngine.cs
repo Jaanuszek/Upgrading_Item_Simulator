@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -10,7 +11,6 @@ namespace Upgrading_Item_Simulator
     {
         private Shop shop;
         private Player player;
-        private IRecipeFactory recipe;
         public GameEngine(Shop shop, Player player)
         {
             this.shop = shop;
@@ -19,6 +19,7 @@ namespace Upgrading_Item_Simulator
         public void RunGame()
         {
             bool running = CheckBankruptcy(player);
+            double result = 0;
             Console.WriteLine("Welcome to the Upgrading Items simulator!");
             Console.WriteLine("You can buy resources in the shop and craft items with them.");
             Console.WriteLine("Rules are simple: you can't go bankrupt.\nFirstly you go to the shop to buy resources" +
@@ -39,22 +40,20 @@ namespace Upgrading_Item_Simulator
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine("Remember them!");
                 Console.ForegroundColor = ConsoleColor.White;
+                Console.WriteLine("Can We go to the shop? [Y/N]");
+                Console.ReadLine();
+                Console.Clear();
                 shop.RestockResource();
-                Console.ForegroundColor = ConsoleColor.Magenta;
-                Console.WriteLine("Your Resources:");
-                foreach (var resource in player.Resources)
-                {
-                    Console.WriteLine(resource.Key.GetName() + " " + resource.Value);
-                }
-                Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine($"You have {player.Money} money");
                 Console.WriteLine("Available resources in shop:");
                 shop.ShowResources();
                 player.BuyResource(shop);
-                Item craftedItem = CreateItem();
+                Item? craftedItem = CreateItem();
                 if (craftedItem != null)
                 {
-                    player.Money += ProcessCraftedItem(order, craftedItem);
+                    result = ProcessCraftedItem(order, craftedItem);
+                    Console.WriteLine("You have earned: " + result + " credits");
+                    player.Money += result;
                     Console.ForegroundColor = ConsoleColor.Blue;
                     Console.WriteLine("Statistics of created item:");
                     Console.WriteLine(craftedItem.GetStats());
@@ -62,21 +61,21 @@ namespace Upgrading_Item_Simulator
                 }
                 else 
                 {
-                    Console.WriteLine("You have not create an item!!"+ "You lose 100 credits");
+                    Console.WriteLine("You have not create an item!!\n"+"You lose 100 credits");
                     player.Money -= 100;
                 }
                 Console.WriteLine($"You have {player.Money} money");
                 Console.WriteLine("Do You want to continue? [Y/N]");
-                string decision = Console.ReadLine();
+                string decision = Console.ReadLine()??"";
                 running = CheckBankruptcy(player);
+                Console.Clear();
                 if (decision.ToLower() == "n")
                 {
                     running = false;
                 }
             }
         }
-        //usunięta metoda ShowResources
-        public Item CreateItem()
+        public Item? CreateItem()
         {
             ItemType itType;
             UpgradeType matType;
@@ -108,8 +107,13 @@ namespace Upgrading_Item_Simulator
             };
             Console.WriteLine("What item do you want to create?");
             Console.WriteLine("1. Dagger\n2. Sword\n3. Axe\n4. Bow\n5. Chestplate\n6. Helmet\n7. Boots\n8. Stop");
-            int choice = Convert.ToInt32(Console.ReadLine());
-            if(choice == 8)
+            int choice;
+            if (!int.TryParse(Console.ReadLine(), out choice) || choice < 1 || choice > 8)
+            {
+                Console.WriteLine("Wrong input");
+                choice = 1;
+            }
+            if (choice == 8)
             {
                 return player.CraftItem(ItemType.None, UpgradeType.None, AttributeType.None);
             }
@@ -117,12 +121,20 @@ namespace Upgrading_Item_Simulator
             Console.WriteLine("You choosed: " + itType.ToString());
             Console.WriteLine("What material do you want to use?");
             Console.WriteLine("1. Wood\n2. Iron\n3. Gold\n4. Diamond\n5. None");
-            choice = Convert.ToInt32(Console.ReadLine());
+            if (!int.TryParse(Console.ReadLine(), out choice) || choice < 1 || choice > 5)
+            {
+                Console.WriteLine("Wrong input");
+                choice = 1;
+            }
             matType = (choice >= 1 && choice <= 4) ? upgradeTypes[choice] : UpgradeType.None;
             Console.WriteLine("You choosed: " + matType.ToString());
             Console.WriteLine("What attribute do you want to add?");
             Console.WriteLine("1. Fire\n2. Ice\n3. Poison\n4. None");
-            choice = Convert.ToInt32(Console.ReadLine());
+            if (!int.TryParse(Console.ReadLine(), out choice) || choice < 1 || choice > 4)
+            {
+                Console.WriteLine("Wrong input");
+                choice = 1;
+            }
             attType = (choice >= 1 && choice <= 3) ? attributeTypes[choice-1] : AttributeType.None;
             Console.WriteLine("You choosed: " + attType.ToString());
             return player.CraftItem(itType, matType, attType);
@@ -130,14 +142,14 @@ namespace Upgrading_Item_Simulator
         public double ProcessCraftedItem(Order customerOrder, Item craftedItem) //zamiana na obiekt typu Order zmiana typu funkcji na double
         {
             double result = 0;
-            if(customerOrder.item == craftedItem.ItType) //jakis bug tutaj musi byc
+            if(customerOrder.item == craftedItem.ItType)
             {
                 Console.WriteLine("You have crafted the correct item type!");
             }
             else
             {
-                Console.WriteLine("You have crafted the wrong item type!\nYou lose 50 credits!");
-                return -50;
+                Console.WriteLine("You have crafted the wrong item type!\nYou lose 100 credits!");
+                return -100;
             }
             if(customerOrder.upgradeType == craftedItem.MaterialType)
             {
@@ -147,7 +159,7 @@ namespace Upgrading_Item_Simulator
             else
             {
                 Console.WriteLine("You have used the wrong material!\n");
-                return 50;
+                result += 50;
             }
             if(customerOrder.attributeType == craftedItem.AttribType)
             {
@@ -157,7 +169,7 @@ namespace Upgrading_Item_Simulator
             else
             {
                 Console.WriteLine("You have added the wrong attribute!\n");
-                return 100;
+                result += 50;
             }
             return result;
         }

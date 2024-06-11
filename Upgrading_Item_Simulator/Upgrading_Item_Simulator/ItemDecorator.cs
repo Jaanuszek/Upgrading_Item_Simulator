@@ -12,8 +12,10 @@ namespace Upgrading_Item_Simulator
         public ItemDecorator(Item item)
         {
             decoratedItem = item;
-            Durability = item.Durability;
-            item.AttribType = AttributeType.None;
+            this.Durability = item.Durability;
+            this.ItType = item.ItType;
+            this.MaterialType = item.MaterialType;
+            this.AttribType = item.AttribType;
         }
         public override void Upgrade(Resource resource)
         {

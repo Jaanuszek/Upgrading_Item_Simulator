@@ -34,18 +34,16 @@ namespace Upgrading_Item_Simulator
     }
     class Order
     {
-        //private Item item;
         public ItemType item { get; set; }
         public UpgradeType upgradeType { get; set; }
         public AttributeType attributeType { get; set; }
-        //dodanie enuma i zmiana argumentu konstruktora na ItemType
         public Order(ItemType item, UpgradeType upgradeType, AttributeType attributeType)
         {
             this.item = item;
             this.upgradeType = upgradeType;
             this.attributeType = attributeType;
         }
-        public string GetValues() //zamiana na string z void
+        public string GetValues()
         { 
             return "Item type: " + item.ToString() + ", " + "Material type: " + upgradeType.ToString() + ", " + "Attribute Type:"+ attributeType.ToString();
         }

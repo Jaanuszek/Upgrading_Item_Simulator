@@ -16,10 +16,10 @@ namespace Upgrading_Item_Simulator
             ItType = ItemType.None;
             MaterialType = UpgradeType.None;
             AttribType = AttributeType.None;
-            Durability = 0;
-            armorValue = 0.0;
-            chanceToBlock = 0.0;
-            elemetsResistance = 0.0;
+            Durability = 1;
+            armorValue = 1.0;
+            chanceToBlock = 1.0;
+            elemetsResistance = 1.0;
         }
     }
 }

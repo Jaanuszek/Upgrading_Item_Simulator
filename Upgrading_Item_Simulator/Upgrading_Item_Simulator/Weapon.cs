@@ -14,9 +14,9 @@ namespace Upgrading_Item_Simulator
             ItType = ItemType.None;
             MaterialType = UpgradeType.None;
             AttribType = AttributeType.None;
-            Durability = 0;
-            Damage = 0.0;
-            CriticalChance = 0.0;
+            Durability = 1;
+            Damage = 1.0;
+            CriticalChance = 1.0;
         }
 
     }

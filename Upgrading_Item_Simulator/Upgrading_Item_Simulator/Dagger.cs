@@ -71,7 +71,7 @@ namespace Upgrading_Item_Simulator
         }
         public override string GetStats()
         {
-            return $"Damage: {Damage}, Durability: {Durability}, Critical Chance: {CriticalChance}%, Backstab Chance: {backStabChance}%";
+            return $"Damage: {Damage},\nDurability: {Durability},\nCritical Chance: {CriticalChance}%,\nBackstab Chance: {backStabChance}%";
         }
     }
 }

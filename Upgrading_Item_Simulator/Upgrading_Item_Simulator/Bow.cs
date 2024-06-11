@@ -19,31 +19,31 @@ namespace Upgrading_Item_Simulator
             switch (resource)
             {
                 case (Wood):
-                    Damage += 1;
-                    Durability += 1;
-                    CriticalChance = 5.0;
-                    range = 10;
+                    Damage += 2;
+                    Durability += 2;
+                    CriticalChance = 10.0;
+                    range = 15;
                     MaterialType = UpgradeType.Wood;
                     break;
                 case (Iron):
-                    Damage += 2;
-                    Durability += 2;
-                    CriticalChance = 30.0;
-                    range = 20;
+                    Damage += 4;
+                    Durability += 4;
+                    CriticalChance = 20.0;
+                    range = 25;
                     MaterialType = UpgradeType.Iron;
                     break;
                 case (Gold):
-                    Damage += 3;
-                    Durability += 3;
-                    CriticalChance = 50.0;
-                    range = 30;
+                    Damage += 6;
+                    Durability += 6;
+                    CriticalChance = 30.0;
+                    range = 35;
                     MaterialType = UpgradeType.Gold;
                     break;
                 case (Diamond):
-                    Damage += 4;
-                    Durability += 4;
-                    CriticalChance = 70.0;
-                    range = 40;
+                    Damage += 8;
+                    Durability += 8;
+                    CriticalChance = 40.0;
+                    range = 45;
                     MaterialType = UpgradeType.Diamond;
                     break;
                 default:
@@ -68,7 +68,7 @@ namespace Upgrading_Item_Simulator
         }
         public override string GetStats()
         {
-            return $"Damage: {Damage}, Durability: {Durability}, Critical Chance: {CriticalChance}%, Range: {range}m";
+            return $"Damage: {Damage},\nDurability: {Durability},\nCritical Chance: {CriticalChance}%,\nRange: {range}m";
         }
     }
 }

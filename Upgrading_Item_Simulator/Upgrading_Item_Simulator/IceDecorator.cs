@@ -12,20 +12,21 @@ namespace Upgrading_Item_Simulator
         private double iceResistance { get; set; }
         public IceDecorator(Item item) : base(item)
         {
-            item.Durability = item.Durability + 50;
-            item.AttribType = AttributeType.Ice;
-            Durability += 50;
-            if(item is Weapon)
+            this.Durability += 50;
+            this.AttribType = AttributeType.Ice;
+            if (item is Weapon)
             {
                 Weapon weapon = (Weapon)item;
                 weapon.Damage = weapon.Damage*1.5;
                 weapon.CriticalChance = weapon.CriticalChance*1.3;
+                iceDamage =  5;
             }
             else if(item is Armor)
             {
                 Armor armor = (Armor)item;
                 armor.armorValue += 10;
                 armor.chanceToBlock += 0.1;
+                iceResistance =  40;
             }
         }
         public override void Upgrade(Resource resource)
@@ -39,7 +40,18 @@ namespace Upgrading_Item_Simulator
         }
         public override string GetStats()
         {
-            return decoratedItem.GetStats();
+            if(decoratedItem is Weapon)
+            {
+                return decoratedItem.GetStats() + " Ice Damage: " + iceDamage;
+            }
+            else if(decoratedItem is Armor)
+            {
+                return decoratedItem.GetStats() + " Ice Resistance: " + iceResistance;
+            }
+            else
+            {
+                return decoratedItem.GetStats();
+            }
         }
     }
 }

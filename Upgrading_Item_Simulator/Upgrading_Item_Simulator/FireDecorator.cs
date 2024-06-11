@@ -8,22 +8,26 @@ namespace Upgrading_Item_Simulator
 {
     internal class FireDecorator : ItemDecorator   
     {
+        private double FireDamage { get; set; }
+        private double FireResistance { get; set; }
         public FireDecorator(Item item) : base(item)
         {
-            item.Durability = item.Durability + 50;
-            item.AttribType = AttributeType.Fire;
-            Durability += 50;
+            this.Durability += 50;
+            this.AttribType = AttributeType.Fire;
+            decoratedItem.Durability += 50;
             if (item is Weapon)
             {
                 Weapon weapon = (Weapon)item;
                 weapon.Damage = weapon.Damage * 1.5;
                 weapon.CriticalChance = weapon.CriticalChance * 1.3;
+                FireDamage =  10;
             }
             else if (item is Armor)
             {
                 Armor armor = (Armor)item;
                 armor.armorValue += 10;
                 armor.chanceToBlock += 0.1;
+                FireResistance =  20;
             }
         }
         public override void Upgrade(Resource resource)
@@ -37,7 +41,18 @@ namespace Upgrading_Item_Simulator
         }
         public override string GetStats()
         {
-            return decoratedItem.GetStats();
+            if(decoratedItem is Weapon)
+            {
+                return decoratedItem.GetStats() + " Fire Damage: " + FireDamage;
+            }
+            else if(decoratedItem is Armor)
+            {
+                return decoratedItem.GetStats() + " Fire Resistance: " + FireResistance;
+            }
+            else
+            {
+                return decoratedItem.GetStats();
+            }
         }
     }
 }

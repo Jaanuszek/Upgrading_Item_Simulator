@@ -9,8 +9,7 @@ namespace Upgrading_Item_Simulator
     abstract class Resource
     {
         protected double price { get; set; }
-        protected int quantity { get; set; } //mozliwe ze to sie w ogole nie przyda
-        protected string name { get; set; }
+        protected string? name { get; set; }
 
         public override bool Equals(object? obj) //Metoda sprawdzająca czy porównywalny obiekt ma takie same właściwości
         {
@@ -27,7 +26,6 @@ namespace Upgrading_Item_Simulator
             return name == null ? 0 : name.GetHashCode();
         }
         abstract public double GetPrice();
-        abstract public int GetQuantity();
         abstract public string GetName();
     }
 }

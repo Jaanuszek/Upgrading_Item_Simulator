@@ -12,38 +12,38 @@ namespace Upgrading_Item_Simulator
         public Axe():base()
         {
             ItType = ItemType.Axe;
-            cleaveRange = 0;
+            cleaveRange = 1;
         }
         public override void Upgrade(Resource resource)
         {
             switch (resource)
             {
                 case (Wood):
-                    Damage += 1;
-                    Durability += 1;
-                    CriticalChance = 5.0;
-                    cleaveRange = 1;
+                    Damage += 2;
+                    Durability += 3;
+                    CriticalChance = 10.0;
+                    cleaveRange = 2;
                     MaterialType = UpgradeType.Wood;
                     break;
                 case (Iron):
-                    Damage += 2;
-                    Durability += 2;
-                    CriticalChance = 30.0;
-                    cleaveRange = 2;
+                    Damage += 4;
+                    Durability += 5;
+                    CriticalChance = 20.0;
+                    cleaveRange = 3;
                     MaterialType = UpgradeType.Iron;
                     break;
                 case (Gold):
-                    Damage += 3;
-                    Durability += 3;
-                    CriticalChance = 50.0;
-                    cleaveRange = 3;
+                    Damage += 6;
+                    Durability += 7;
+                    CriticalChance = 30.0;
+                    cleaveRange = 4;
                     MaterialType = UpgradeType.Gold;
                     break;
                 case (Diamond):
-                    Damage += 4;
-                    Durability += 4;
-                    CriticalChance = 70.0;
-                    cleaveRange = 4;
+                    Damage += 8;
+                    Durability += 9;
+                    CriticalChance = 40.0;
+                    cleaveRange = 5;
                     MaterialType = UpgradeType.Diamond;
                     break;
                 default:
@@ -68,7 +68,7 @@ namespace Upgrading_Item_Simulator
         }
         public override string GetStats()
         {
-            return $"Damage: {Damage}, Durability: {Durability}, Critical Chance: {CriticalChance}%, Cleave Range: {cleaveRange}%";
+            return $"Damage: {Damage},\nDurability: {Durability},\nCritical Chance: {CriticalChance}%,\nCleave Range:\n{cleaveRange}%";
         }
     }
 }

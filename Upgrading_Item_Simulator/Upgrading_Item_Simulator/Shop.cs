@@ -9,7 +9,7 @@ namespace Upgrading_Item_Simulator
     class Shop
     {
         public Dictionary<Resource,int> AvailableResources { get; set; }
-        Random random = new Random(); //dodanie tego
+        public Random random = new Random();
         public Shop()
         {
             AvailableResources = new Dictionary<Resource, int>
@@ -20,7 +20,7 @@ namespace Upgrading_Item_Simulator
                 { new Diamond(),0 }
             };
         }
-        public Dictionary<Resource, int> GetResource(string resourceName, int quantity) //dodanie quantity i zmiana zwracanego typu
+        public Dictionary<Resource, int>? GetResource(string resourceName, int quantity) //dodanie quantity i zmiana zwracanego typu
         {
             Dictionary <Resource, int> SelledItems = new Dictionary<Resource, int>
             {
@@ -29,7 +29,7 @@ namespace Upgrading_Item_Simulator
                 { new Gold(),0 },
                 { new Diamond(),0 }
             };
-            Resource resourceToBuy = null;
+            Resource? resourceToBuy = null;
             switch (resourceName.ToLower())
             {
                 case "wood":

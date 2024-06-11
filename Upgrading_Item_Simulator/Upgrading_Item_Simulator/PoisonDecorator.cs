@@ -8,22 +8,26 @@ namespace Upgrading_Item_Simulator
 {
     internal class PoisonDecorator : ItemDecorator
     {
+        private double PoisonDamage { get; set; }
+        private double PoisonReduction { get; set; }
         public PoisonDecorator(Item item) : base(item)
         {
-            item.Durability = item.Durability + 50;
-            item.AttribType = AttributeType.Poison;
-            Durability += 50;
+            decoratedItem.Durability += 50;
+            this.Durability += 50;
+            this.AttribType = AttributeType.Poison;
             if (item is Weapon)
             {
                 Weapon weapon = (Weapon)item;
                 weapon.Damage = weapon.Damage * 1.5;
                 weapon.CriticalChance = weapon.CriticalChance * 1.3;
+                PoisonDamage =  30;
             }
             else if (item is Armor)
             {
                 Armor armor = (Armor)item;
                 armor.armorValue += 10;
                 armor.chanceToBlock += 0.1;
+                PoisonReduction =  10;
             }
         }
         public override void Upgrade(Resource resource)
@@ -37,7 +41,18 @@ namespace Upgrading_Item_Simulator
         }
         public override string GetStats()
         {
-            return decoratedItem.GetStats();
+            if(decoratedItem is Weapon)
+            {
+                return decoratedItem.GetStats() + " Poison Damage: " + PoisonDamage;
+            }
+            else if(decoratedItem is Armor)
+            {
+                return decoratedItem.GetStats() + " Poison Reduction: " + PoisonReduction;
+            }
+            else
+            {
+                return decoratedItem.GetStats();
+            }
         }
     }
 }
