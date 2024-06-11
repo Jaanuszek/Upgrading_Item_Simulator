@@ -26,32 +26,32 @@ namespace Upgrading_Item_Simulator
             switch (itemType)
             {
                 case ItemType.Dagger:
-                    requiredMaterialsItem.Add(new Iron(), 1);
                     requiredMaterialsItem.Add(new Wood(), 2);
+                    requiredMaterialsItem.Add(new Iron(), 1);                    
                     break;
                 case ItemType.Sword:
-                    requiredMaterialsItem.Add(new Iron(), 2);
                     requiredMaterialsItem.Add(new Wood(), 2);
+                    requiredMaterialsItem.Add(new Iron(), 2);
                     break;
                 case ItemType.Axe:
-                    requiredMaterialsItem.Add(new Iron(), 3);
                     requiredMaterialsItem.Add(new Wood(), 2);
+                    requiredMaterialsItem.Add(new Iron(), 3);
                     break;
                 case ItemType.Bow:
-                    requiredMaterialsItem.Add(new Iron(), 2);
                     requiredMaterialsItem.Add(new Wood(), 3);
+                    requiredMaterialsItem.Add(new Iron(), 2);
                     break;
                 case ItemType.Chestplate:
-                    requiredMaterialsItem.Add(new Iron(), 5);
                     requiredMaterialsItem.Add(new Wood(), 3);
+                    requiredMaterialsItem.Add(new Iron(), 5);
                     break;
                 case ItemType.Helmet:
-                    requiredMaterialsItem.Add(new Iron(), 3);
                     requiredMaterialsItem.Add(new Wood(), 2);
+                    requiredMaterialsItem.Add(new Iron(), 3);
                     break;
                 case ItemType.Boots:
-                    requiredMaterialsItem.Add(new Iron(), 2);
                     requiredMaterialsItem.Add(new Wood(), 1);
+                    requiredMaterialsItem.Add(new Iron(), 2);
                     break;
                 case ItemType.None:
                     break;

@@ -118,6 +118,10 @@ namespace Upgrading_Item_Simulator
         // trzeba pewnie bedzie przerobic klase Recipe, albo dodać tu coś podobnego
         public Item CraftItem(ItemType itemType, UpgradeType matType, AttributeType attribType) //usuniecie argumentu Recipe
         {
+            if(itemType == ItemType.None)
+            {
+                return null;
+            }
             IRecipeFactory recipeFactory = new RecipeFactory();
             Recipe recipe = recipeFactory.CreateRecipe(itemType,matType,attribType);
             foreach(var resource in recipe.requiredMaterialsItem)
@@ -130,17 +134,20 @@ namespace Upgrading_Item_Simulator
                 Resources[resource.Key] -= resource.Value;
             }
             Item item = CreateItem(itemType);
-            Resource material = CreateMaterial(matType);
-            foreach(var resource in recipe.requiredMaterialsUpgrade)
+            if (matType != UpgradeType.None)
             {
-                if (Resources[resource.Key] < resource.Value)
+                Resource material = CreateMaterial(matType);
+                foreach (var resource in recipe.requiredMaterialsUpgrade)
                 {
-                    Console.WriteLine("You don't have enough resources to upgrade this item");
-                    return item;
+                    if (Resources[resource.Key] < resource.Value)
+                    {
+                        Console.WriteLine("You don't have enough resources to upgrade this item");
+                        return item;
+                    }
+                    Resources[resource.Key] -= resource.Value;
                 }
-                Resources[resource.Key] -= resource.Value;
+                item.Upgrade(material);
             }
-            item.Upgrade(material);
             foreach(var resource in recipe.requiredMaterialsAttrib)
             {
                 if (Resources[resource.Key] < resource.Value)
@@ -166,6 +173,7 @@ namespace Upgrading_Item_Simulator
                 ItemType.Chestplate => new Chestplate(),
                 ItemType.Helmet => new Helmet(),
                 ItemType.Boots => new Boots(),
+                //ItemType.None => 
                 _ => throw new ArgumentException("Invalid item type")
             }; 
         }

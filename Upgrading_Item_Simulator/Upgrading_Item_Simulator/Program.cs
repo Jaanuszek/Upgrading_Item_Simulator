@@ -55,7 +55,7 @@ using Upgrading_Item_Simulator;
 //Console.WriteLine("Not Decorated items");
 //foreach (Item item in items)
 //{
-   
+
 //    foreach (Resource resource in resources)
 //    {
 //        item.Upgrade(resource);
