@@ -64,7 +64,7 @@ namespace Upgrading_Item_Simulator
                 }
                 else
                 {
-                    Console.WriteLine("Not enough resources");
+                    SelledItems[resourceToBuy] = 0; //dodanie tego, żeby nie było null w przypadku, gdy nie ma wystarczającej ilości surowca
                 }
             }
             return SelledItems;

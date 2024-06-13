@@ -81,15 +81,23 @@ namespace Upgrading_Item_Simulator
                 }
                 if (resourceToBuy != null)
                 {
+                    var boughtResources = shop.GetResource(resourceToBuy.GetName(), quantity);
                     double totalCost = resourceToBuy.GetPrice() * quantity;
                     if (Money >= totalCost)
                     {
-                        var boughtResources = shop.GetResource(resourceToBuy.GetName(), quantity);
+
                         if (boughtResources != null)
                         {
-                            Money -= totalCost;
-                            AddResource(boughtResources, quantity);
-                            Console.WriteLine($"You bought {quantity} {resourceToBuy.GetName()} for {totalCost}. Remaining money: {Money}");
+                            if (boughtResources[resourceToBuy] == 0)
+                            {
+                                Console.WriteLine("Not enough resources");
+                            }
+                            else
+                            {
+                                Money -= totalCost;
+                                AddResource(boughtResources, quantity);
+                                Console.WriteLine($"You bought {quantity} {resourceToBuy.GetName()} for {totalCost}. Remaining money: {Money}");
+                            }
                             Console.ForegroundColor = ConsoleColor.Magenta;
                             ShowInventory();
                             Console.ForegroundColor = ConsoleColor.White;
@@ -114,7 +122,7 @@ namespace Upgrading_Item_Simulator
                 Resources[resource.Key] += resource.Value;
             }
         }
-        private void ShowInventory()
+        public void ShowInventory()
         {
             Console.WriteLine("Your inventory:");
             foreach (var res in Resources)

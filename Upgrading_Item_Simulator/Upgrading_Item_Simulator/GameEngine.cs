@@ -30,6 +30,10 @@ namespace Upgrading_Item_Simulator
                 Order order = customer.CreateOrder();
                 IRecipeFactory recipeFactory = new RecipeFactory();
                 Recipe recipe = recipeFactory.CreateRecipe(order);
+                Console.WriteLine("Your Inventory:");
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                player.ShowInventory();
+                Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("Create the following item:");
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine(order.GetValues());
