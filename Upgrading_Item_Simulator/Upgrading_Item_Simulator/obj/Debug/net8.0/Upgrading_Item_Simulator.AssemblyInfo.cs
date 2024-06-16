@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Upgrading_Item_Simulator")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a293fc9f1c6b78629c455eb6f7ece8a27d5f7d42")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+5b1549177b09d586aaa9fbbbd67b9ae550ac593d")]
 [assembly: System.Reflection.AssemblyProductAttribute("Upgrading_Item_Simulator")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Upgrading_Item_Simulator")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

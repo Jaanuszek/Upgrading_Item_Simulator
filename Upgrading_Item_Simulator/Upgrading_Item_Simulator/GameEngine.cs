@@ -59,6 +59,7 @@ namespace Upgrading_Item_Simulator
                     Console.WriteLine("You have earned: " + result + " credits");
                     player.Money += result;
                     Console.ForegroundColor = ConsoleColor.Blue;
+                    Console.WriteLine("You have created: " + craftedItem.GetDescription());
                     Console.WriteLine("Statistics of created item:");
                     Console.WriteLine(craftedItem.GetStats());
                     Console.ForegroundColor = ConsoleColor.White;
