@@ -66,7 +66,7 @@ namespace Upgrading_Item_Simulator
                 case UpgradeType.Diamond:
                     return "Diamond Chestplate";
                 default:
-                    throw new ArgumentOutOfRangeException();
+                    return "Chestplate";
             }
         }
         public override string GetStats()

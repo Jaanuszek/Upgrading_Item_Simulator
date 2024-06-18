@@ -10,6 +10,9 @@ namespace Upgrading_Item_Simulator
     {
         public Dictionary<Resource,int> AvailableResources { get; set; }
         public Random random = new Random();
+        public int UpgradeLevel { get; private set; }
+        private int upgradeCost;
+     
         public Shop()
         {
             AvailableResources = new Dictionary<Resource, int>
@@ -19,6 +22,52 @@ namespace Upgrading_Item_Simulator
                 { new Gold(),0 },
                 { new Diamond(),0 }
             };
+        }
+        public int UpgradeCost
+        {
+            get
+            {
+                if (UpgradeLevel == 0)
+                {
+                    upgradeCost = 1000;
+                    return upgradeCost;
+                }
+                else if (UpgradeLevel == 1)
+                {
+                    upgradeCost = 5000;
+                    return upgradeCost;
+                }
+                else if (UpgradeLevel == 2)
+                {
+                    upgradeCost = 10000;
+                    return upgradeCost;
+                }
+                else
+                {
+                    upgradeCost = 0;
+                    return upgradeCost;
+                }
+            }
+        }
+        public bool UpgradeShop(Player player)
+        {
+            if (UpgradeLevel < 3)
+            {
+                if (player.Money > upgradeCost)
+                {
+                    player.Money -= upgradeCost;
+                    UpgradeLevel++;
+                    return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+            else
+            {
+                return false;
+            }
         }
         public Dictionary<Resource, int>? GetResource(string resourceName, int quantity) //dodanie quantity i zmiana zwracanego typu
         {
@@ -76,23 +125,79 @@ namespace Upgrading_Item_Simulator
             {
                 if (resource is Wood)
                 {
-                    AvailableResources[resource] = random.Next(1, 20);
+                    switch (UpgradeLevel)
+                    {
+                        case 1:
+                            AvailableResources[resource] = random.Next(5, 25);
+                            break;
+                        case 2:
+                            AvailableResources[resource] = random.Next(10, 30);
+                            break;
+                        case 3:
+                            AvailableResources[resource] = random.Next(20, 35);
+                            break;
+                        default:
+                            AvailableResources[resource] = random.Next(1, 20);
+                            break;
+                    }
                 }
                 if (resource is Iron)
                 {
-                    AvailableResources[resource] = random.Next(1, 15);
+                    switch (UpgradeLevel)
+                    {
+                        case 1:
+                            AvailableResources[resource] = random.Next(5, 20);
+                            break;
+                        case 2:
+                            AvailableResources[resource] = random.Next(10, 25);
+                            break;
+                        case 3:
+                            AvailableResources[resource] = random.Next(15, 30);
+                            break;
+                        default:
+                            AvailableResources[resource] = random.Next(1, 15);
+                            break;
+                    }
                 }
                 if (resource is Gold)
                 {
-                    AvailableResources[resource] = random.Next(1, 10);
+                    switch (UpgradeLevel)
+                    {
+                        case 1:
+                            AvailableResources[resource] = random.Next(1, 3);
+                            break;
+                        case 2:
+                            AvailableResources[resource] = random.Next(2, 7);
+                            break;
+                        case 3:
+                            AvailableResources[resource] = random.Next(3, 10); 
+                            break;
+                        default:
+                            AvailableResources[resource] = random.Next(0, 3); 
+                            break;
+                    }
                 }
                 if (resource is Diamond)
                 {
-                    AvailableResources[resource] = random.Next(1, 3);
+                    switch (UpgradeLevel)
+                    {
+                        case 1:
+                            AvailableResources[resource] = random.Next(1, 3);
+                            break;
+                        case 2:
+                            AvailableResources[resource] = random.Next(2, 6);
+                            break;
+                        case 3:
+                            AvailableResources[resource] = random.Next(5, 11);
+                            break;
+                        default:
+                            AvailableResources[resource] = random.Next(0, 2);
+                            break;
+                    }
                 }
             }
         }
-        public void ShowResources() //nie wiem czy sie przyda, ale narazie niech sobie bedzie
+        public void ShowResources() 
         {
             foreach (var resource in AvailableResources)
             {

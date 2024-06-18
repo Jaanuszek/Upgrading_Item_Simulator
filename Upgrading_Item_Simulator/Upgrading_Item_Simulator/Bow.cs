@@ -11,7 +11,7 @@ namespace Upgrading_Item_Simulator
         private double range { get; set; }
         public Bow(): base()
         {
-            range = 0;
+            range = 5;
             ItType = ItemType.Bow;
         }
         public override void Upgrade(Resource resource)
@@ -63,7 +63,7 @@ namespace Upgrading_Item_Simulator
                 case UpgradeType.Diamond:
                     return "Diamond Bow";
                 default:
-                    throw new ArgumentOutOfRangeException();
+                    return "Bow";
             }
         }
         public override string GetStats()

@@ -65,7 +65,7 @@ namespace Upgrading_Item_Simulator
                 case (UpgradeType.Diamond):
                     return "Diamond Helmet";
                 default:
-                    throw new ArgumentOutOfRangeException();
+                    return "Helmet";
             }
         }
         public override string GetStats()

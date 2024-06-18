@@ -24,10 +24,10 @@ namespace Upgrading_Item_Simulator
         public void BuyResource(Shop shop)
         {
             bool isBuying = true;
+            Console.ForegroundColor = ConsoleColor.Magenta;
+            ShowInventory();
             while (isBuying)
             {
-                Console.ForegroundColor = ConsoleColor.Magenta;
-                ShowInventory();
                 Console.ForegroundColor = ConsoleColor.Green;
                 Console.WriteLine("Remaining money: " + Money);
                 Console.ForegroundColor = ConsoleColor.White;
@@ -79,6 +79,7 @@ namespace Upgrading_Item_Simulator
                     default:
                         break;
                 }
+                Console.Clear();
                 if (resourceToBuy != null)
                 {
                     var boughtResources = shop.GetResource(resourceToBuy.GetName(), quantity);
@@ -109,7 +110,6 @@ namespace Upgrading_Item_Simulator
                         Console.WriteLine($"Remaining money {Money}");
                     }
                 }
-                Console.Clear();
                 Console.WriteLine("Shop Resources:");
                 shop.ShowResources();
             }
@@ -130,7 +130,7 @@ namespace Upgrading_Item_Simulator
                 Console.WriteLine(res.Key.GetName() + " " + res.Value);
             }
         }
-        public Item? CraftItem(ItemType itemType, UpgradeType matType, AttributeType attribType) //usuniecie argumentu Recipe
+        public Item? CraftItem(ItemType itemType, UpgradeType matType, AttributeType attribType)
         {
             if(itemType == ItemType.None)
             {

@@ -66,7 +66,7 @@ namespace Upgrading_Item_Simulator
                 case UpgradeType.Diamond:
                     return "Diamond Dagger";
                 default:
-                    throw new ArgumentOutOfRangeException();
+                    return "Dagger";
             }
         }
         public override string GetStats()

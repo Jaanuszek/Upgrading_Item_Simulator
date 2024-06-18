@@ -45,13 +45,37 @@ namespace Upgrading_Item_Simulator
                 Console.WriteLine("Remember them!");
                 Console.ForegroundColor = ConsoleColor.White;
                 Console.WriteLine("Can We go to the shop? [Y/N]");
-                Console.ReadLine();
+                string decisionShop = Console.ReadLine() ?? "";
+                if (decisionShop.ToLower() == "y")
+                {
+                    Console.Clear();
+                    shop.RestockResource();
+                    Console.WriteLine($"You have {player.Money} money");
+                    if (player.Money > shop.UpgradeCost)
+                    {
+                        Console.WriteLine("You have enough money to upgrade a shop! It will cost you: " + shop.UpgradeCost + " credits");
+                        Console.WriteLine("Do you want to upgrade the shop? [Y/N]");
+                        string decission = Console.ReadLine() ?? "";
+                        if (decission.ToLower() == "y")
+                        {
+                            shop.UpgradeShop(player);
+                            shop.RestockResource();
+                        }
+                        else if (decission.ToLower() == "n")
+                        {
+
+                        }
+                        else
+                        {
+                            Console.WriteLine("Wrong input You are going to shop");
+                        }
+                    }
+                    Console.WriteLine("Current lvl of shop:" + shop.UpgradeLevel);
+                    Console.WriteLine("Available resources in shop:");
+                    shop.ShowResources();
+                    player.BuyResource(shop);
+                }
                 Console.Clear();
-                shop.RestockResource();
-                Console.WriteLine($"You have {player.Money} money");
-                Console.WriteLine("Available resources in shop:");
-                shop.ShowResources();
-                player.BuyResource(shop);
                 Item? craftedItem = CreateItem();
                 if (craftedItem != null)
                 {
@@ -144,7 +168,7 @@ namespace Upgrading_Item_Simulator
             Console.WriteLine("You choosed: " + attType.ToString());
             return player.CraftItem(itType, matType, attType);
         }
-        public double ProcessCraftedItem(Order customerOrder, Item craftedItem) //zamiana na obiekt typu Order zmiana typu funkcji na double
+        public double ProcessCraftedItem(Order customerOrder, Item craftedItem) 
         {
             double result = 0;
             if(customerOrder.item == craftedItem.ItType)
@@ -153,8 +177,8 @@ namespace Upgrading_Item_Simulator
             }
             else
             {
-                Console.WriteLine("You have crafted the wrong item type!\nYou lose 100 credits!");
-                return -100;
+                Console.WriteLine("You have crafted the wrong item type!\nYou lose 200 credits!");
+                return -200;
             }
             if(customerOrder.upgradeType == craftedItem.MaterialType)
             {
@@ -164,7 +188,7 @@ namespace Upgrading_Item_Simulator
             else
             {
                 Console.WriteLine("You have used the wrong material!\n");
-                result += 50;
+                result += 0;
             }
             if(customerOrder.attributeType == craftedItem.AttribType)
             {
@@ -174,11 +198,11 @@ namespace Upgrading_Item_Simulator
             else
             {
                 Console.WriteLine("You have added the wrong attribute!\n");
-                result += 50;
+                result += 0;
             }
             return result;
         }
-        public bool CheckBankruptcy(Player player) //zmiana na bool
+        public bool CheckBankruptcy(Player player) 
         {
             if(player.Money < 0)
             {

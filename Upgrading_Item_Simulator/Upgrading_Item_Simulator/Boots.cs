@@ -65,7 +65,7 @@ namespace Upgrading_Item_Simulator
                 case UpgradeType.Diamond:
                     return "Diamond Boots";
                 default:
-                    throw new ArgumentOutOfRangeException();
+                    return "Boots";
             }
         }
         public override string GetStats()
